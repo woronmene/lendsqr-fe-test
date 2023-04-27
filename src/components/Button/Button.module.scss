@@ -1,0 +1,26 @@
+@import "../../styles/global";
+
+.button {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.outlineButton {
+  background-color: transparent;
+  border: 2px solid;
+}
+
+.solidButton {
+  background-color: #39cdcc;
+  color: #fff;
+}
