@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import App from "./App.tsx";
 import Login from "./routes/Login/Login.tsx";
-import "./index.css";
 import "./styles/main.scss";
 import Root from "./routes/Root/Root.tsx";
 
