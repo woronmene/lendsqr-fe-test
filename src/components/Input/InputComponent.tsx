@@ -1,16 +1,28 @@
-import React, { useState } from "react";
+import React, { FocusEventHandler, useState, useRef, useEffect } from "react";
 import styles from "./InputComponent.module.scss";
 
 interface InputComponentProps {
   type: string;
   placeholder: string;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
+  // searchInputRef?: React.RefObject<HTMLInputElement>;
 }
 
 const InputComponent: React.FC<InputComponentProps> = ({
   type,
   placeholder,
+  onBlur,
+  // searchInputRef,
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, []);
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
@@ -26,6 +38,8 @@ const InputComponent: React.FC<InputComponentProps> = ({
                 type="text"
                 placeholder={placeholder}
                 className={styles.search}
+                onBlur={type === "search" ? onBlur : undefined}
+                ref={type === "search" ? searchInputRef : undefined}
               />
             </div>
             <div className={styles.searchIcon}>

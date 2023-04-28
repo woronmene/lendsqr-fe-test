@@ -1,3 +1,5 @@
+@import "../../styles/global";
+
 .sidebar {
   width: 283px;
   height: 100%;
@@ -7,4 +9,16 @@
   overflow: scroll;
   background: #ffffff;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.5s ease;
+
+  &.isClosed {
+    transform: translateX(-100%);
+  }
+  &.isOpen {
+    transform: translateX(0);
+  }
+
+  @include lgMaxBreakPoint {
+    transform: translateX(0);
+  }
 }
