@@ -20,12 +20,18 @@ const InputComponent: React.FC<InputComponentProps> = ({
     switch (type) {
       case "search":
         return (
-          <div className={styles.inputComponent}>
-            <input type="text" placeholder={placeholder} />
+          <div className={styles.searchInput}>
+            <div className={`${styles.inputComponent} ${styles.search}`}>
+              <input
+                type="text"
+                placeholder={placeholder}
+                className={styles.search}
+              />
+            </div>
             <div className={styles.searchIcon}>
               <svg
-                width="14"
-                height="14"
+                width="16"
+                height="16"
                 viewBox="0 0 14 14"
                 fill="black"
                 xmlns="http://www.w3.org/2000/svg"
