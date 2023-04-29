@@ -1,16 +1,28 @@
-import React, { useState } from "react";
+import React, { FocusEventHandler, useState, useRef, useEffect } from "react";
 import styles from "./InputComponent.module.scss";
 
 interface InputComponentProps {
   type: string;
   placeholder: string;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
+  // searchInputRef?: React.RefObject<HTMLInputElement>;
 }
 
 const InputComponent: React.FC<InputComponentProps> = ({
   type,
   placeholder,
+  onBlur,
+  // searchInputRef,
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, []);
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
@@ -20,12 +32,20 @@ const InputComponent: React.FC<InputComponentProps> = ({
     switch (type) {
       case "search":
         return (
-          <div className={styles.inputComponent}>
-            <input type="text" placeholder={placeholder} />
+          <div className={styles.searchInput}>
+            <div className={`${styles.inputComponent} ${styles.search}`}>
+              <input
+                type="text"
+                placeholder={placeholder}
+                className={styles.search}
+                onBlur={type === "search" ? onBlur : undefined}
+                ref={type === "search" ? searchInputRef : undefined}
+              />
+            </div>
             <div className={styles.searchIcon}>
               <svg
-                width="14"
-                height="14"
+                width="16"
+                height="16"
                 viewBox="0 0 14 14"
                 fill="black"
                 xmlns="http://www.w3.org/2000/svg"

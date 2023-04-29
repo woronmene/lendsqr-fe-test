@@ -1,0 +1,59 @@
+@import "../../styles/global";
+
+.sidebar {
+  width: 283px;
+  height: 100%;
+  position: fixed;
+  background-color: yellowgreen;
+  padding-top: 100px;
+  overflow: scroll;
+  background: #ffffff;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.5s ease;
+  // font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+
+  &.isClosed {
+    transform: translateX(-100%);
+  }
+  &.isOpen {
+    transform: translateX(0);
+  }
+
+  @include lgMaxBreakPoint {
+    transform: translateX(0);
+  }
+
+  .container {
+    // height: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 40px;
+    border-top: 1px solid #21407d2d;
+
+    .sidebarHeading {
+      padding-left: 30px;
+      padding-bottom: 10px;
+      color: #545f7d;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .logout {
+      border-top: 1px solid #21407d2d;
+      padding-top: 20px;
+    }
+
+    .versionText {
+      font-weight: 400;
+      font-size: 12px;
+      padding-left: 30px;
+      padding-bottom: 40px;
+
+      color: #213f7d;
+    }
+  }
+}

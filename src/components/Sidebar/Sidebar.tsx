@@ -1,0 +1,75 @@
+import React, { useEffect } from "react";
+import styles from "./Sidebar.module.scss";
+import { customers, businesses, settings } from "../../utils/constants";
+import SidebarItem from "../SidebarItem/SidebarItem";
+
+type SidebarProps = {
+  showNav: boolean;
+  setShowNav: (showNav: boolean) => void;
+};
+
+const Sidebar: React.FC<SidebarProps> = ({ showNav, setShowNav }) => {
+  //   const [showNav, setShowNav] = useState<boolean>(true);
+  const screenWidthThreshold = 1024;
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < screenWidthThreshold) {
+        setShowNav(false);
+      } else {
+        setShowNav(true);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [setShowNav]);
+
+  //   const toggleNav = () => {
+  //     setShowNav(!showNav);
+  //   };
+
+  return (
+    <div
+      className={`${styles.sidebar} ${
+        showNav ? styles.isOpen : styles.isClosed
+      }`}
+    >
+      <div className={styles.container}>
+        <SidebarItem
+          text="Switch Organization"
+          image="/Icons/switchOrganizationIcon.svg"
+          icon="/Icons/chevronDownIcon.svg"
+        />
+        <SidebarItem text="Dashboard" image="/Icons/dashboardIcon.svg" />
+        <div>
+          <p className={styles.sidebarHeading}>CUSTOMERS</p>
+          {customers.map((item) => (
+            <SidebarItem key={item.text} text={item.text} image={item.image} />
+          ))}
+        </div>
+
+        <div>
+          <p className={styles.sidebarHeading}>BUSINESSES</p>
+          {businesses.map((item) => (
+            <SidebarItem key={item.text} text={item.text} image={item.image} />
+          ))}
+        </div>
+
+        <div>
+          <p className={styles.sidebarHeading}>SETTINGS</p>
+          {settings.map((item) => (
+            <SidebarItem key={item.text} text={item.text} image={item.image} />
+          ))}
+        </div>
+        <div className={styles.logout}>
+          <SidebarItem text="Logout" image="/Icons/logoutIcon.svg" />
+        </div>
+
+        <p className={styles.versionText}>v1.2.0</p>
+      </div>
+    </div>
+  );
+};
+export default Sidebar;

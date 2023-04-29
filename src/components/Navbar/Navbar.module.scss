@@ -1,0 +1,193 @@
+@import "../../styles/global";
+
+.navbar {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  display: flex;
+
+  @include xlMaxBreakPoint {
+    // border: 1px solid red;
+  }
+  @include lgMaxBreakPoint {
+    // border: 1px solid black;
+  }
+  @include mdMaxBreakPoint {
+    // border: 3px solid green;
+  }
+
+  .logoSection {
+    width: 283px;
+    // border: 1px solid red;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 30px;
+    gap: 10px;
+
+    .menu {
+      display: none;
+      cursor: pointer;
+
+      @include lgMaxBreakPoint {
+        display: block;
+      }
+    }
+
+    .logoContainer {
+      // border: 1px solid red;
+      width: 60%;
+
+      @include lgMaxBreakPoint {
+        width: 150px;
+      }
+      @include mdMaxBreakPoint {
+        width: 100px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .rightSection {
+    flex: 1;
+    // border: 1px solid green;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mdMaxBreakPoint {
+      justify-content: flex-end;
+    }
+
+    @include xlMaxBreakPoint {
+      padding: 0 2%;
+    }
+
+    .searchContainer {
+      // width: 34%;]
+      width: 400px;
+      // border: 1px solid red;
+
+      @include lgMaxBreakPoint {
+        width: 300px;
+        margin-right: 20px;
+      }
+      @include smMaxBreakPoint {
+        width: 200px;
+        // margin-right: 20px;
+      }
+    }
+
+    .options {
+      display: flex;
+      align-items: center;
+      // border: 1px solid red;
+
+      @include lgMaxBreakPoint {
+        gap: 24px;
+      }
+      // @include mdMaxBreakPoint {
+      //   gap: 10px;
+      // }
+
+      .searchIconContainer {
+        // border: 1px solid red;
+        // margin-right: 24px;
+
+        img {
+          // width: 100%;
+          margin-bottom: -5px;
+          padding-bottom: -5px;
+        }
+        @include mdMaxBreakPoint {
+          // width: 20px;
+        }
+      }
+
+      .docs {
+        color: #213f7d;
+        font-weight: 400;
+        font-family: "Roboto", sans-serif;
+        margin-right: 47px;
+
+        @include lgMaxBreakPoint {
+          margin-right: 0;
+        }
+
+        @include mdMaxBreakPoint {
+          display: none;
+        }
+      }
+
+      .notificationContainer {
+        margin-right: 30px;
+        // border: 1px solid red;
+
+        @include lgMaxBreakPoint {
+          margin-right: 0;
+        }
+        @include mdMaxBreakPoint {
+          // width: 20px;
+          margin-right: 0;
+          // border: 1px solid red;
+        }
+
+        img {
+          // width: 100%;
+          margin-bottom: -5px;
+          padding-bottom: -5px;
+        }
+      }
+
+      .userProfile {
+        display: flex;
+        gap: 4px;
+      }
+
+      .avatar {
+        width: 48px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-image: url("../../../public/avatar.png");
+        background-position: center;
+        background-size: cover;
+        margin-right: 10px;
+
+        @include lgMaxBreakPoint {
+          width: 40px;
+          margin-right: 0;
+        }
+        @include mdMaxBreakPoint {
+          width: 30px;
+          // margin-right: -10px;
+        }
+      }
+
+      .name {
+        display: flex;
+        // border: 1px solid red;
+        align-items: center;
+
+        p {
+          font-family: "Work Sans", sans-serif;
+          font-weight: 500;
+          color: #213f7d;
+          margin-right: 10px;
+
+          @include lgMaxBreakPoint {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
