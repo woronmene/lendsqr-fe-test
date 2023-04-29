@@ -5,16 +5,34 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./routes/Login/Login.tsx";
 import "./styles/main.scss";
 import Root from "./routes/Root/Root.tsx";
+// import Users from "./routes/Users/Users.tsx";
+import UserDetail from "./routes/UserDetail/UserDetail.tsx";
+import Page from "./routes/Page/Page.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+
+    children: [
+      // {
+      //   path: "users/",
+      //   element: <Users />,
+      // },
+      {
+        path: "users/:userId",
+        element: <UserDetail />,
+      },
+      {
+        path: "/:page",
+        element: <Page />,
+      },
+    ],
   },
-  {
-    path: "/users",
-    element: <p>Users page</p>,
-  },
+  // {
+  //   path: "/users",
+  //   element: <p>Users page</p>,
+  // },
   {
     path: "/login",
     element: <Login />,
