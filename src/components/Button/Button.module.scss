@@ -2,7 +2,7 @@
 
 .button {
   display: inline-block;
-  padding: 15px 30px;
+
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
@@ -13,11 +13,26 @@
   &:hover {
     opacity: 0.8;
   }
+  .text {
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  &.large {
+    padding: 15px 30px;
+  }
+  &.small {
+    // padding: 12px;
+    // width: calc((170 / 1440) * 100);
+    width: 170px;
+    height: 40px;
+  }
 }
 
 .outlineButton {
   background-color: transparent;
-  border: 2px solid;
+  border: 1px solid;
 }
 
 .solidButton {
