@@ -43,7 +43,7 @@ export interface User {
   id: string;
 }
 
-// Function to get all users from an endpoint
+// Function to get all users
 export async function getAllUsers(): Promise<User[]> {
   const response = await axios.get(
     "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users "
@@ -51,7 +51,7 @@ export async function getAllUsers(): Promise<User[]> {
   return response.data;
 }
 
-// Function to get user details by ID from another endpoint
+// Function to get user details by ID
 export async function getUserById(id: string): Promise<User> {
   const response = await axios.get(
     `https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${id}`

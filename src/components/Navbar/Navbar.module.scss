@@ -59,10 +59,13 @@
   .rightSection {
     flex: 1;
     // border: 1px solid green;
-    padding: 0 5%;
+    // width: 92%;
+    padding: 0 4%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1700px;
+    margin: 0 auto;
 
     @include mdMaxBreakPoint {
       justify-content: flex-end;
@@ -106,7 +109,6 @@
         img {
           // width: 100%;
           margin-bottom: -5px;
-          padding-bottom: -5px;
         }
         @include mdMaxBreakPoint {
           // width: 20px;

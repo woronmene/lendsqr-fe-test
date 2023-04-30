@@ -37,6 +37,7 @@ const Login: React.FC = () => {
           </Button> */}
           <Button
             variant="solid"
+            size="large"
             color="#fff"
             onClick={() => console.log("Button clicked")}
           >
