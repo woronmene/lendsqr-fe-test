@@ -1,0 +1,274 @@
+@import "../../styles/global";
+
+.userCard {
+  width: 100%;
+
+  //   border: 1px solid red;
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    // @include mdMaxBreakPoint {
+    //   border: 1px solid red;
+    // }
+
+    .topCard {
+      width: 100%;
+      padding-top: 20px;
+      background: #ffffff;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+
+      .detailsSection {
+        display: flex;
+        align-items: center;
+
+        margin-left: 30px;
+        margin-bottom: 51px;
+
+        @include smMaxBreakPoint {
+          // border: 1px solid red;
+          margin-left: 15px;
+          flex-wrap: wrap;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+          // width: 600px;
+        }
+
+        .avatarSection {
+          // border: 1px solid black;
+          display: flex;
+          align-items: center;
+        }
+
+        .avatar {
+          width: 100px;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          background-color: rgba(33, 63, 125, 0.16);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 20px;
+          // border: 1px solid red;
+
+          // @include mdMaxBreakPoint {
+          //   // width: 65px;
+          //   margin-right: 5px;
+          //   min-width: 40px;
+          // }
+
+          // img {
+          //   @include mdMaxBreakPoint {
+          //     // width: 22px;
+          //   }
+          // }
+        }
+        .name {
+          padding-right: 30px;
+
+          // @include mdMaxBreakPoint {
+          //   padding-right: 20px;
+          // }
+          // @include smMaxBreakPoint {
+          //   padding-right: 10px;
+          // }
+
+          .fullName {
+            font-family: "Work Sans";
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 26px;
+            /* identical to box height */
+
+            color: #213f7d;
+            margin-bottom: 8px;
+
+            @include mdMaxBreakPoint {
+              font-size: 18px;
+              white-space: nowrap;
+            }
+            @include smMaxBreakPoint {
+              font-size: 22px;
+            }
+          }
+
+          .id {
+            font-family: "Work Sans";
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+
+            color: #545f7d;
+
+            @include mdMaxBreakPoint {
+              font-size: 12px;
+            }
+            @include smMaxBreakPoint {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .horizontalRule {
+          width: 80px;
+          transform: rotate(90deg);
+          opacity: 0.2;
+          background-color: #545f7d;
+          // border: 1px solid red;
+          min-width: 50px;
+
+          @include smMaxBreakPoint {
+            display: none;
+          }
+        }
+
+        .tier {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 10px;
+          p {
+            font-family: "Work Sans";
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+
+            color: #545f7d;
+
+            @include mdMaxBreakPoint {
+              font-size: 10px;
+              white-space: nowrap;
+            }
+            @include smMaxBreakPoint {
+              font-size: 14px;
+            }
+          }
+
+          .rating {
+            display: flex;
+            gap: 3px;
+
+            img {
+              @include mdMaxBreakPoint {
+                width: 10px;
+              }
+              @include smMaxBreakPoint {
+                width: 15px;
+              }
+            }
+          }
+        }
+
+        .account {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 12px;
+
+          .amount {
+            font-family: "Work Sans";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 26px;
+
+            color: #213f7d;
+
+            @include mdMaxBreakPoint {
+              font-size: 15px;
+            }
+            @include smMaxBreakPoint {
+              font-size: 22px;
+            }
+          }
+
+          .accountDetails {
+            font-family: "Work Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            /* identical to box height */
+
+            color: #213f7d;
+
+            @include mdMaxBreakPoint {
+              font-size: 8px;
+            }
+            @include smMaxBreakPoint {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      .tabNav {
+        width: 100%;
+        // border: 1px solid red;
+        padding: 0 36px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include lgMaxBreakPoint {
+          padding: 0 20px;
+        }
+        @include mdMaxBreakPoint {
+          // width: 600px;
+          gap: 20px;
+          overflow: scroll;
+        }
+
+        .tabNavItem {
+          font-family: "Work Sans";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          width: 170px;
+          padding: 10px 0;
+          text-align: center;
+          cursor: pointer;
+          white-space: nowrap;
+          transition: 0.1s all ease;
+
+          @include xlMaxBreakPoint {
+            font-size: 14px;
+          }
+          @include lgMaxBreakPoint {
+            font-size: 12px;
+          }
+          &:hover {
+            border-bottom: 2px solid #39cdcc;
+            /* identical to box height */
+
+            color: #39cdcc;
+          }
+
+          &.active {
+            // border: 3px solid black;
+            border-bottom: 2px solid #39cdcc;
+            /* identical to box height */
+
+            color: #39cdcc;
+          }
+        }
+      }
+    }
+
+    .tabContentCard {
+      width: 100%;
+      padding: 20px 0;
+      background: #ffffff;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+    }
+  }
+}

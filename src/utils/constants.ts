@@ -90,4 +90,25 @@ const settings = [
   },
 ];
 
-export { customers, businesses, settings };
+const tabs = [
+  {
+    text: "General Details",
+  },
+  {
+    text: "Documents",
+  },
+  {
+    text: "Bank Details",
+  },
+  {
+    text: "Loans",
+  },
+  {
+    text: "Savings",
+  },
+  {
+    text: "App and System",
+  },
+];
+
+export { customers, businesses, settings, tabs };
