@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import styles from "./UserCard.module.scss";
 import TabContent from "../TabContent/TabContent";
 import { tabs } from "../../utils/constants";
+import { User } from "../../utils/users";
 
-// type UserCardProps = {
+type UserCardProps = {
+  user: User | undefined;
+};
 
-// };
-
-const UserCard: React.FC = () => {
+const UserCard: React.FC<UserCardProps> = ({ user }) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   const handleTabClick = (tabIndex: number) => {
     setActiveTabIndex(tabIndex);
   };
+
   return (
     <div className={styles.userCard}>
       <div className={styles.container}>
@@ -23,8 +25,10 @@ const UserCard: React.FC = () => {
                 <img src="/Icons/profileIcon.svg" alt="" />
               </div>
               <div className={styles.name}>
-                <p className={styles.fullName}>Grace Effiom</p>
-                <p className={styles.id}>LSQFf587g90</p>
+                <p
+                  className={styles.fullName}
+                >{`${user?.profile.firstName}  ${user?.profile.lastName}`}</p>
+                <p className={styles.id}>{user?.accountNumber}</p>
               </div>
             </div>
 
@@ -43,7 +47,7 @@ const UserCard: React.FC = () => {
             <hr className={styles.horizontalRule} />
 
             <div className={styles.account}>
-              <p className={styles.amount}>₦200,000.00</p>
+              <p className={styles.amount}>₦{`${user?.accountBalance}`}</p>
               <p className={styles.accountDetails}>9912345678/Providus Bank</p>
             </div>
           </div>
@@ -62,7 +66,7 @@ const UserCard: React.FC = () => {
           </div>
         </div>
         <div className={styles.tabContentCard}>
-          <TabContent activeTabIndex={activeTabIndex} />
+          <TabContent user={user} activeTabIndex={activeTabIndex} />
         </div>
       </div>
     </div>

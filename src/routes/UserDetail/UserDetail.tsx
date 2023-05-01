@@ -4,6 +4,7 @@ import { getUserById } from "../../utils/users";
 import { useParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import UserCard from "../../components/UserCard/UserCard";
+import { User } from "../../utils/users";
 
 // type UserDetailProps = {
 
@@ -11,21 +12,55 @@ import UserCard from "../../components/UserCard/UserCard";
 
 const UserDetail: React.FC = () => {
   const { userId } = useParams();
-  const [user, setUser] = useState<string>("");
+  const [user, setUser] = useState<User>();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    const getUserFromLocalStorage = (id: string): User | undefined => {
+      const usersFromLocalStorage = localStorage.getItem("users");
+      if (usersFromLocalStorage) {
+        const users: User[] = JSON.parse(usersFromLocalStorage);
+        return users.find((user) => user.id === id);
+      }
+      return undefined;
+    };
+
     async function fetchUser() {
-      const user = await getUserById(userId as any);
+      const user = await getUserById(userId as string);
       console.log(user);
-      setUser(user.profile.firstName);
+      setUser(user);
 
       //   console.log(JSON.stringify(users[0]));
 
       //   setUsers(users);
     }
 
-    // fetchUser();
+    const userFromLocalStorage = localStorage.getItem("users");
+
+    if (userFromLocalStorage) {
+      setUser(getUserFromLocalStorage(userId as string));
+      // setUsers(JSON.parse(usersFromLocalStorage));
+      setIsLoading(false);
+    } else {
+      fetchUser();
+    }
+
+    // Check if users are already in local storage
+    const usersFromLocalStorage = localStorage.getItem("users");
+    if (usersFromLocalStorage) {
+      getUserFromLocalStorage(userId as string);
+      // setUsers(JSON.parse(usersFromLocalStorage));
+      setIsLoading(false);
+    } else {
+      fetchUser();
+    }
+
+    fetchUser();
   }, []);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className={styles.userDetails}>
@@ -56,7 +91,7 @@ const UserDetail: React.FC = () => {
             </Button>
           </div>
         </div>
-        <UserCard />
+        <UserCard user={user} />
       </div>
     </div>
   );

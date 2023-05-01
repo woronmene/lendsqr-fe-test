@@ -1,16 +1,18 @@
 import React from "react";
 import styles from "./OverviewCard.module.scss";
-// type OverviewCardProps = {
+type OverviewCardProps = {
+  image: string;
+  field: string;
+  value: string;
+};
 
-// };
-
-const OverviewCard: React.FC = () => {
+const OverviewCard: React.FC<OverviewCardProps> = ({ image, field, value }) => {
   return (
     <div className={styles.overviewCard}>
       <div className={styles.container}>
-        <img src="/Icons/usersDashboardIcon.svg" alt="" />
-        <p className={styles.field}>Users</p>
-        <p className={styles.value}>2,453</p>
+        <img src={image} alt="" />
+        <p className={styles.field}>{field}</p>
+        <p className={styles.value}>{value}</p>
       </div>
     </div>
   );

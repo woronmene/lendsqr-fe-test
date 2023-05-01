@@ -11,6 +11,7 @@ import TableHeader from "../../components/TableHeader/TableHeader";
 import TableRow from "../../components/TableRow/TableRow";
 import Pagination from "../../components/Pagination/Pagination";
 import UsersContext from "../../context/UsersContext";
+import { overviewData } from "../../utils/constants";
 
 // type UsersProps = {
 //   test: string;
@@ -48,10 +49,14 @@ const Users: React.FC = () => {
         ))} */}
         <div className={styles.container}>
           <div className={styles.reviewCards}>
-            <OverviewCard />
-            <OverviewCard />
-            <OverviewCard />
-            <OverviewCard />
+            {overviewData.map((card) => (
+              <OverviewCard
+                key={card.field}
+                image={card.image}
+                field={card.field}
+                value={card.value}
+              />
+            ))}
           </div>
 
           <div className={styles.tableContainer}>

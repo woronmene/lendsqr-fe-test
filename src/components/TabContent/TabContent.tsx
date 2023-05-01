@@ -1,21 +1,36 @@
 import React from "react";
 import styles from "./TabContent.module.scss";
-import { tabs } from "../../utils/constants";
+import {
+  personalInformationFields,
+  educationAndEmploymentFields,
+  socialsFields,
+  tabs,
+} from "../../utils/constants";
 import InfoSection from "../InfoSection/InfoSection";
+import { User } from "../../utils/users";
 
 type TabContentProps = {
   activeTabIndex: number;
+  user: User | undefined;
 };
 
-const TabContent: React.FC<TabContentProps> = ({ activeTabIndex }) => {
+const TabContent: React.FC<TabContentProps> = ({ activeTabIndex, user }) => {
   if (activeTabIndex === 0) {
     return (
       <div className={styles.tabContent}>
-        <InfoSection />
+        <InfoSection
+          heading="Personal Information"
+          user={user}
+          fields={personalInformationFields}
+        />
         <hr className={styles.horizontalRule} />
-        <InfoSection />
+        <InfoSection
+          heading="Education and Employment"
+          user={user}
+          fields={educationAndEmploymentFields}
+        />
         <hr className={styles.horizontalRule} />
-        <InfoSection />
+        <InfoSection heading="Socials" user={user} fields={socialsFields} />
 
         <hr className={styles.horizontalRule} />
       </div>
