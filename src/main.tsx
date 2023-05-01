@@ -7,7 +7,7 @@ import "./styles/main.scss";
 import Root from "./routes/Root/Root.tsx";
 // import Users from "./routes/Users/Users.tsx";
 import UserDetail from "./routes/UserDetail/UserDetail.tsx";
-import Page from "./routes/Page/Page.tsx";
+import Users from "./routes/Users/Users.tsx";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/:page",
-        element: <Page />,
+        element: <Users />,
       },
     ],
   },
