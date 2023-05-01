@@ -1,9 +1,10 @@
 import { createContext, useEffect, useState } from "react";
+import { User, getAllUsers } from "../utils/users";
 
 const UsersContext = createContext<any>({} as any);
 
 const UsersProvider = ({ children }: any) => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<User[]>([]);
   const [text, setText] = useState<string>("100");
   const [isLoading, setIsLoading] = useState(true);
 
@@ -11,11 +12,15 @@ const UsersProvider = ({ children }: any) => {
 
   useEffect(() => {
     const fetchUsersAPI = async () => {
-      const response = await fetch(
-        "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/"
-      );
-      const data = await response.json();
+      // const response = await fetch(
+      //   "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/"
+      // );
+
+      const data = await getAllUsers();
+
       setUsers(data);
+      localStorage.setItem("users", JSON.stringify(data));
+
       setIsLoading(false);
     };
 

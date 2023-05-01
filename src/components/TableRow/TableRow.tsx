@@ -34,7 +34,7 @@ const TableRow: React.FC<TableRowProps> = ({ user }) => {
           }}
         />
 
-        {showMenu && <Menu setShowMenu={setShowMenu} />}
+        {showMenu && <Menu user={user} setShowMenu={setShowMenu} />}
       </div>
     </tr>
   );
