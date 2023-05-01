@@ -14,6 +14,7 @@ import Menu from "../../components/Menu/Menu";
 
 const Users: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
+  const [showMenu, setShowMenu] = useState<boolean>(false);
   const navigate = useNavigate();
   const { page } = useParams();
 
@@ -166,12 +167,19 @@ const Users: React.FC = () => {
                     <td>Lendsqr</td>
                     <td>Lendsqr</td>
                     <td>
-                      <Badge variant="pending" label="Pending" />
+                      <Badge variant="pending" label="Pending12" />
                     </td>
                     <div className={styles.moreIcon}>
-                      <img src="/Icons/moreIcon.svg" alt="" />
+                      <img
+                        src="/Icons/moreIcon.svg"
+                        alt=""
+                        onClick={() => {
+                          console.log("clicked");
+                          setShowMenu(true);
+                        }}
+                      />
 
-                      <Menu />
+                      {showMenu && <Menu setShowMenu={setShowMenu} />}
                     </div>
                   </tr>
                   <tr>
