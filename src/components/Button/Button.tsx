@@ -19,11 +19,18 @@ const Button: React.FC<ButtonProps> = ({
   const buttonStyles =
     variant === "outline" ? styles.outlineButton : styles.solidButton;
 
+  const sizeClass =
+    size === "large"
+      ? styles.large
+      : size === "small"
+      ? styles.small
+      : size === "smaller"
+      ? styles.smaller
+      : "";
+
   return (
     <button
-      className={`${buttonStyles} ${styles.button} ${
-        size === "large" ? styles.large : styles.small
-      }`}
+      className={`${buttonStyles} ${styles.button} ${sizeClass}`}
       style={{ color, borderColor: color }}
       onClick={onClick}
     >

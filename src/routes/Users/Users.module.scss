@@ -1,0 +1,112 @@
+@import "../../styles/global";
+
+.users {
+  // border: 1px solid red;
+  width: 100vw;
+  height: 100vh;
+  padding-left: 283px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @include lgMaxBreakPoint {
+    padding-left: 0px;
+  }
+
+  .container {
+    // border: 1px solid green;
+    padding: 60px 4.5%;
+
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    // margin-bottom: 100px;
+    max-width: 1700px;
+
+    .reviewCards {
+      width: 100%;
+      margin-bottom: 40px;
+      // border: 1px solid green;
+      display: grid;
+      justify-content: space-between;
+
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 26px;
+
+      @include xxlMaxBreakPoint {
+        grid-template-columns: repeat(3, 1fr);
+        // border: 1px solid red;
+      }
+      @include mdMaxBreakPoint {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: flex-start;
+      }
+      @include smMaxBreakPoint {
+        // grid-template-columns: repeat(1, 1fr);
+        // display: flex;
+        // flex-wrap: wrap;
+        // border: 1px solid red;
+        justify-content: center;
+      }
+    }
+
+    .tableContainer {
+      // border: 3px solid blue;
+      max-height: 800px;
+      height: auto;
+      overflow: scroll;
+      width: 100%;
+      // margin-bottom: 100px;
+
+      @include mdMaxBreakPoint {
+        // border: 3px solid red;
+        // width: 700px;
+        overflow: scroll;
+      }
+    }
+
+    .usersTable {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+
+      table {
+        padding: 30px;
+        padding-bottom: 0;
+        // width: 992px;
+        width: 100%;
+
+        margin-inline: auto;
+        // border: 1px solid black;
+        background: #ffffff;
+
+        @include xlMaxBreakPoint {
+          // border: 3px solid red;
+          // min-width: 700px;
+          width: 992px;
+          overflow: scroll;
+        }
+
+        td {
+          text-align: left;
+
+          padding: 23px 0;
+          // font-weight: 600;
+          font-family: "Work Sans", sans-serif;
+
+          width: 17%;
+
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+          /* identical to box height */
+
+          color: #545f7d;
+          // border: 1px solid red;
+        }
+      }
+    }
+  }
+}

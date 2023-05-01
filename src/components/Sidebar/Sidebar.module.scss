@@ -14,6 +14,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+  z-index: 9;
 
   &.isClosed {
     transform: translateX(-100%);

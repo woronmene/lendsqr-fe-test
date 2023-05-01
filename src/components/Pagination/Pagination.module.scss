@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,400;0,500;0,600;1,300&display=swap");
+.paginationButtons {
+  // margin-left: 284px;
+  // margin-bottom: 400px;
+  // margin-top: 19px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Work Sans";
+  font-size: 14px;
+  color: rgb(84, 95, 125);
+  flex-wrap: wrap;
+  // border: 1px solid red;
+
+  .selectPages {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    // border: 1px solid red;
+
+    p {
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: #545f7d;
+    }
+
+    select {
+      background: rgba(33, 63, 125, 0.1);
+      border-radius: 4px;
+      width: 80px;
+      height: 30px;
+
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+
+      color: #213f7d;
+      // padding: 12px;
+      outline: none;
+      border: none;
+
+      padding-right: 20px;
+      padding-left: 12px;
+      /* Position the icon to the right */
+      background-position: right 10px center;
+      /* Use a custom icon or increase the width of the default icon to make it more visible */
+      background-image: url("../../../public/Icons/selectChevron.svg");
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      // opacity: 0.6;
+      /* Hide the default arrow icon */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+  }
+
+  .inactive {
+    opacity: 0.5;
+  }
+
+  // div:first-child {
+
+  //   position: relative;
+  //   min-width: 210.406px;
+  //   button {
+  //     background-color: rgba(33, 63, 125, 0.1);
+  //     border-radius: 4px;
+  //     font-weight: 500;
+  //     color: #213f7d;
+  //     padding: 5px 10px;
+  //     position: relative;
+  //   }
+  //   img {
+  //     margin-left: 10px;
+  //     position: relative;
+  //     top: 2px;
+  //   }
+  // }
+  div:nth-child(2) {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+  }
+  button {
+    background-color: transparent;
+    border: 0;
+    font-family: "Work Sans";
+    font-size: 14px;
+    color: #545f7d99;
+    margin: 4px;
+    position: relative;
+    outline: none;
+  }
+  .active {
+    color: #545f7d;
+    font-weight: 500;
+  }
+  .dot {
+    color: rgb(84, 95, 125, 0.6);
+  }
+
+  .navigationButtons {
+    .previousButton {
+      background: none;
+      margin-left: 4px;
+      cursor: pointer;
+      // margin-right: 4px;
+      // border: 1px solid green;
+
+      cursor: pointer;
+    }
+
+    .nextButton {
+      background: none;
+      cursor: pointer;
+    }
+
+    span {
+      position: relative;
+      top: 2px;
+      background-color: rgba(33, 63, 125, 0.1);
+      border-radius: 4px;
+      border: 0;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+    }
+    // span:last-child {
+    //   img {
+    //     // transform: rotate(180deg);
+    //   }
+    // }
+  }
+
+  .rowValues {
+    min-width: 22.891px;
+    display: flex;
+    justify-content: center;
+  }
+  .divs {
+    background-color: rgba(57, 205, 204, 0.06);
+  }
+}
+
+@media (max-width: 772px) {
+  .paginationButtons {
+    justify-content: center;
+    div:nth-child(2) {
+      margin-top: 10px;
+      margin-bottom: -10px;
+    }
+  }
+}

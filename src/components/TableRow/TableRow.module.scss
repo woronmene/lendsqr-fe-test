@@ -1,0 +1,48 @@
+@import "../../styles/global";
+
+tr {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+  position: relative;
+
+  .moreIcon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+
+  @include lgMaxBreakPoint {
+    // border: 3px solid red;
+    width: auto;
+    // overflow: scroll;
+  }
+  // background: rgba(33, 63, 125, 0.1);
+  // border: 1px solid black;
+
+  &:last-child {
+    border: none;
+  }
+}
+
+td {
+  text-align: left;
+
+  padding: 23px 0;
+  // font-weight: 600;
+  font-family: "Work Sans", sans-serif;
+
+  width: 17%;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height */
+
+  color: #545f7d;
+  // border: 1px solid red;
+}

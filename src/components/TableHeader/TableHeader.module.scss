@@ -1,0 +1,22 @@
+th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Work Sans", sans-serif;
+  color: #545f7d;
+  width: 17%;
+  padding: 23px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  // border: 1px solid red;
+  .filterIcon {
+    // border: 1px solid red;
+    position: relative;
+  }
+
+  img {
+    cursor: pointer;
+  }
+}

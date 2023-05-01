@@ -111,4 +111,100 @@ const tabs = [
   },
 ];
 
-export { customers, businesses, settings, tabs };
+const tableHeaderData = [
+  "ORGANIZATION",
+  "USERNAME",
+  "EMAIL",
+  "PHONE NUMBER",
+  "DATE JOINED",
+  "STATUS",
+];
+
+const overviewData = [
+  {
+    field: "Users",
+    value: "2,453",
+    image: "/Icons/usersDashboardIcon.svg",
+  },
+  {
+    field: "Active Users",
+    value: "2,453",
+    image: "/Icons/activeUsersIcon.svg",
+  },
+  {
+    field: "Users with Loans",
+    value: "12,453",
+    image: "/Icons/usersWithLoansIcon.svg",
+  },
+  {
+    field: "Users with Savings",
+    value: "102,453",
+    image: "/Icons/usersWithSavingsIcon.svg",
+  },
+];
+
+const personalInformationFields = [
+  "FULL NAME",
+  "PHONE NUMBER",
+  "EMAIL ADDRESS",
+  "BVN",
+  "GENDER",
+  "MARITAL STATUS",
+  "CHILDREN",
+  "TYPE OF RESIDENCE",
+];
+
+const educationAndEmploymentFields = [
+  "LEVEL OF EDUCATION",
+  "EMPLOYMENT STATUS",
+  "SECTOR OF EMPLOYMENT",
+  "DURATION OF EMPLOYMENT",
+  "OFFICE EMAIL",
+  "MONTHLY INCOME",
+  "LOAN REPAYMENT",
+];
+
+// const socialsFieldss = ["TWITTER", "FACEBOOK", "INSTAGRAM"];
+
+const socialsFields = [
+  {
+    field: "TWITTER",
+    key: "socials",
+  },
+  {
+    field: "FACEBOOK",
+    key: "socials",
+  },
+  {
+    field: "INSTAGRAM",
+    key: "socials",
+  },
+];
+
+const guarantorFields = [
+  "FULL NAME",
+  "PHONE NUMBER",
+  "EMAIL ADDRESS",
+  "RELATIONSHIP",
+];
+
+const lastFields = [
+  "FULL NAME",
+  "PHONE NUMBER",
+  "EMAIL ADDRESS",
+  "RELATIONSHIP",
+];
+
+export {
+  customers,
+  businesses,
+  settings,
+  tabs,
+  tableHeaderData,
+  overviewData,
+  personalInformationFields,
+  educationAndEmploymentFields,
+  socialsFields,
+  guarantorFields,
+  lastFields,
+};
