@@ -1,34 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./Users.module.scss";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-import { getAllUsers, User } from "../../utils/users";
+import { User } from "../../utils/users";
 import OverviewCard from "../../components/OverviewCard/OverviewCard";
-import Badge from "../../components/Badge/Badge";
-import Menu from "../../components/Menu/Menu";
+
+import { tableHeaderData } from "../../utils/constants";
+import TableHeader from "../../components/TableHeader/TableHeader";
+import TableRow from "../../components/TableRow/TableRow";
+import Pagination from "../../components/Pagination/Pagination";
+import UsersContext from "../../context/UsersContext";
 
 // type UsersProps = {
 //   test: string;
 // };
 
 const Users: React.FC = () => {
-  const [users, setUsers] = useState<User[]>([]);
-  const [showMenu, setShowMenu] = useState<boolean>(false);
-  const navigate = useNavigate();
+  // const [users, setUsers] = useState<User[]>([]);
+
+  // const navigate = useNavigate();
   const { page } = useParams();
+  const { sliceUsersList } = useContext(UsersContext);
 
-  useEffect(() => {
-    async function fetchUsers() {
-      const users = await getAllUsers();
-      //   console.log(JSON.stringify(users[0]));
-      console.log(users);
+  // useEffect(() => {
+  //   async function fetchUsers() {
+  //     const users = await getAllUsers();
+  //     //   console.log(JSON.stringify(users[0]));
+  //     console.log(users);
 
-      setUsers(users);
-    }
+  //     setUsers(users);
+  //   }
 
-    // fetchUsers();
-  }, []);
+  //   fetchUsers();
+  // }, []);
 
   if (page === "Users") {
     return (
@@ -54,180 +59,30 @@ const Users: React.FC = () => {
               <table>
                 <thead>
                   <tr>
-                    <th>
-                      <p>ORGANIZATION</p>
-                      <img src="/Icons/filterIcon.svg" alt="" />
-                    </th>
-                    <th>
-                      <p>USERNAME</p>
-                      <img src="/Icons/filterIcon.svg" alt="" />
-                    </th>
-                    <th>
-                      {" "}
-                      <p>EMAIL</p>
-                      <img src="/Icons/filterIcon.svg" alt="" />
-                    </th>
-                    <th>
-                      {" "}
-                      <p>PHONE NUMBER</p>
-                      <img src="/Icons/filterIcon.svg" alt="" />
-                    </th>
-                    <th>
-                      {" "}
-                      <p>DATE JOINED</p>
-                      <img src="/Icons/filterIcon.svg" alt="" />
-                    </th>
-                    <th>
-                      <p>STATUS</p>
-                      <img src="/Icons/filterIcon.svg" alt="" />
-                    </th>
+                    {tableHeaderData.map((header) => (
+                      <TableHeader key={header} header={header} />
+                    ))}
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>
-                      <Badge variant="inactive" label="Inactive" />
-                    </td>
-
-                    <img
-                      className={styles.moreIcon}
-                      src="/Icons/moreIcon.svg"
-                      alt=""
-                    />
-                  </tr>
-                  <tr>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>
-                      <Badge variant="active" label="Active" />
-                    </td>
-                    <img
-                      className={styles.moreIcon}
-                      src="/Icons/moreIcon.svg"
-                      alt=""
-                    />
-                  </tr>
-                  <tr>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>
-                      <Badge variant="blacklisted" label="Blacklisted" />
-                    </td>
-                    <img
-                      className={styles.moreIcon}
-                      src="/Icons/moreIcon.svg"
-                      alt=""
-                    />
-                  </tr>
-                  <tr>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>
-                      <Badge variant="pending" label="Pending" />
-                    </td>
-                    <img
-                      className={styles.moreIcon}
-                      src="/Icons/moreIcon.svg"
-                      alt=""
-                    />
-                  </tr>
-                  <tr>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>
-                      <Badge variant="blacklisted" label="Blacklisted" />
-                    </td>
-                    <img
-                      className={styles.moreIcon}
-                      src="/Icons/moreIcon.svg"
-                      alt=""
-                    />
-                  </tr>
-                  <tr>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>
-                      <Badge variant="pending" label="Pending12" />
-                    </td>
-                    <div className={styles.moreIcon}>
-                      <img
-                        src="/Icons/moreIcon.svg"
-                        alt=""
-                        onClick={() => {
-                          console.log("clicked");
-                          setShowMenu(true);
-                        }}
-                      />
-
-                      {showMenu && <Menu setShowMenu={setShowMenu} />}
-                    </div>
-                  </tr>
-                  <tr>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>
-                      <Badge variant="inactive" label="Inactive" />
-                    </td>
-                    <div className={styles.moreIcon}>
-                      <img src="/Icons/moreIcon.svg" alt="" />
-                    </div>
-                  </tr>
-                  <tr>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>
-                      <Badge variant="blacklisted" label="Blacklisted" />
-                    </td>
-                    <div className={styles.moreIcon}>
-                      <img src="/Icons/moreIcon.svg" alt="" />
-                    </div>
-                  </tr>
-
-                  <tr>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>Lendsqr</td>
-                    <td>
-                      <Badge variant="active" label="Active" />
-                    </td>
-                    <div className={styles.moreIcon}>
-                      <img src="/Icons/moreIcon.svg" alt="" />
-                    </div>
-                  </tr>
+                  {sliceUsersList &&
+                    sliceUsersList.map((user: User) => (
+                      <TableRow user={user} key={user.id} />
+                    ))}
                 </tbody>
               </table>
             </div>
           </div>
 
-          <div style={{ padding: "100px" }}>badge</div>
+          <div
+            style={{
+              padding: "20px",
+              paddingBottom: "100px",
+              // border: "1px solid red",
+            }}
+          >
+            <Pagination />
+          </div>
         </div>
       </div>
     );

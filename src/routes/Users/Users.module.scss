@@ -51,10 +51,11 @@
 
     .tableContainer {
       // border: 3px solid blue;
-      height: 700px;
+      max-height: 800px;
+      height: auto;
       overflow: scroll;
       width: 100%;
-      margin-bottom: 100px;
+      // margin-bottom: 100px;
 
       @include mdMaxBreakPoint {
         // border: 3px solid red;
@@ -80,57 +81,11 @@
         // border: 1px solid black;
         background: #ffffff;
 
-        @include lgMaxBreakPoint {
+        @include xlMaxBreakPoint {
           // border: 3px solid red;
           // min-width: 700px;
           width: 992px;
           overflow: scroll;
-        }
-
-        tr {
-          display: flex;
-          width: 100%;
-          justify-content: space-between;
-          border-bottom: 1px solid rgba(33, 63, 125, 0.1);
-          position: relative;
-
-          .moreIcon {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            cursor: pointer;
-          }
-
-          @include lgMaxBreakPoint {
-            // border: 3px solid red;
-            width: auto;
-            overflow: scroll;
-          }
-          // background: rgba(33, 63, 125, 0.1);
-          // border: 1px solid black;
-
-          &:last-child {
-            border: none;
-          }
-        }
-
-        th {
-          text-align: left;
-          font-size: 12px;
-          font-weight: 600;
-          font-family: "Work Sans", sans-serif;
-          color: #545f7d;
-          width: 17%;
-          padding: 23px 0;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          // border: 1px solid red;
-
-          img {
-            cursor: pointer;
-          }
         }
 
         td {

@@ -1,0 +1,101 @@
+.filterCard {
+  position: absolute;
+  width: 270px;
+  height: auto;
+  background: #ffffff;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  z-index: 100;
+  left: -100px;
+  top: 30px;
+  padding: 30px 20px;
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    // border: 1px solid red;
+
+    .formItem {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-family: "Work Sans";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: #545f7d;
+        margin-bottom: 6px;
+      }
+
+      input,
+      select {
+        background: #ffffff;
+        border: 1px solid rgba(33, 63, 125, 0.2);
+        border-radius: 8px;
+        height: 40px;
+        padding: 0 20px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        // opacity: 0.6;
+
+        color: rgba(84, 95, 125, 0.7);
+
+        &::placeholder {
+          font-family: "Work Sans";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+
+          color: rgba(84, 95, 125, 0.7);
+        }
+      }
+
+      select {
+        padding-right: 20px;
+        /* Position the icon to the right */
+        background-position: right 10px center;
+        /* Use a custom icon or increase the width of the default icon to make it more visible */
+        background-image: url("../../../public/Icons/selectChevron.svg");
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        // opacity: 0.6;
+        /* Hide the default arrow icon */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      .datePicker {
+        padding-right: 20px;
+        /* Position the icon to the right */
+        background-position: right 10px center;
+        /* Use a custom icon or increase the width of the default icon to make it more visible */
+        background-image: url("../../../public/Icons/dateIcon.svg");
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        // opacity: 0.6;
+        /* Hide the default arrow icon */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+    }
+
+    .buttonGroup {
+      width: 100%;
+      //   border: 1px solid red;
+      display: flex;
+      justify-content: space-between;
+
+      align-items: center;
+      //   gap: 14px;
+    }
+  }
+}

@@ -24,7 +24,7 @@ const Menu: React.FC<MenuProps> = ({ setShowMenu }) => {
     if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
       // click occurred outside of the menu, so close the menu
       // replace with your code to close the menu
-      console.log("outside");
+
       setShowMenu(false);
     }
   }

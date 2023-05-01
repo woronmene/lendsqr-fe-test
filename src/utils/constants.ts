@@ -111,4 +111,13 @@ const tabs = [
   },
 ];
 
-export { customers, businesses, settings, tabs };
+const tableHeaderData = [
+  "ORGANIZATION",
+  "USERNAME",
+  "EMAIL",
+  "PHONE NUMBER",
+  "DATE JOINED",
+  "STATUS",
+];
+
+export { customers, businesses, settings, tabs, tableHeaderData };

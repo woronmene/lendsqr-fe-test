@@ -8,6 +8,7 @@ import Root from "./routes/Root/Root.tsx";
 // import Users from "./routes/Users/Users.tsx";
 import UserDetail from "./routes/UserDetail/UserDetail.tsx";
 import Users from "./routes/Users/Users.tsx";
+import { UsersProvider } from "./context/UsersContext.tsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <UsersProvider>
+      <RouterProvider router={router} />
+    </UsersProvider>
   </React.StrictMode>
 );
