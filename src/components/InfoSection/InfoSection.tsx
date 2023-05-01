@@ -5,7 +5,7 @@ import { User } from "../../utils/users";
 
 type InfoSectionProps = {
   heading: string;
-  fields: string[];
+  fields: { field: string; key: string }[];
   user: User | undefined;
 };
 
@@ -15,9 +15,14 @@ const InfoSection: React.FC<InfoSectionProps> = ({ heading, fields, user }) => {
       <p className={styles.header}>{heading}</p>
       <div className={styles.details}>
         {/* <DetailItem  /> */}
-        {fields.map((field) => (
+
+        <div className={styles.detailItem}>
+          <p className={styles.field}></p>
+          <p className={styles.value}>Grace Effiom</p>
+        </div>
+        {/* {fields.map((field, i) => (
           <DetailItem field={field} user={user} />
-        ))}
+        ))} */}
       </div>
     </div>
   );

@@ -3,14 +3,14 @@ import styles from "./DetailItem.module.scss";
 import { User } from "../../utils/users";
 
 type DetailItemProps = {
-  field: string;
+  field: { field: string; key: string };
   user: User | undefined;
 };
 
 const DetailItem: React.FC<DetailItemProps> = ({ field, user }) => {
   return (
     <div className={styles.detailItem}>
-      <p className={styles.field}>{field}</p>
+      <p className={styles.field}>{field.field}</p>
       <p className={styles.value}>Grace Effiom</p>
     </div>
   );

@@ -6,6 +6,8 @@ import Button from "../../components/Button/Button";
 import UserCard from "../../components/UserCard/UserCard";
 import { User } from "../../utils/users";
 
+import { useNavigate } from "react-router-dom";
+
 // type UserDetailProps = {
 
 // };
@@ -14,6 +16,7 @@ const UserDetail: React.FC = () => {
   const { userId } = useParams();
   const [user, setUser] = useState<User>();
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getUserFromLocalStorage = (id: string): User | undefined => {
@@ -29,33 +32,17 @@ const UserDetail: React.FC = () => {
       const user = await getUserById(userId as string);
       console.log(user);
       setUser(user);
-
-      //   console.log(JSON.stringify(users[0]));
-
-      //   setUsers(users);
     }
+    // Check if users are already in local storage
 
     const userFromLocalStorage = localStorage.getItem("users");
 
     if (userFromLocalStorage) {
       setUser(getUserFromLocalStorage(userId as string));
-      // setUsers(JSON.parse(usersFromLocalStorage));
       setIsLoading(false);
     } else {
       fetchUser();
     }
-
-    // Check if users are already in local storage
-    const usersFromLocalStorage = localStorage.getItem("users");
-    if (usersFromLocalStorage) {
-      getUserFromLocalStorage(userId as string);
-      // setUsers(JSON.parse(usersFromLocalStorage));
-      setIsLoading(false);
-    } else {
-      fetchUser();
-    }
-
-    fetchUser();
   }, []);
 
   if (isLoading) {
@@ -65,7 +52,7 @@ const UserDetail: React.FC = () => {
   return (
     <div className={styles.userDetails}>
       <div className={styles.container}>
-        <div className={styles.backButton}>
+        <div className={styles.backButton} onClick={() => navigate("/Users")}>
           <img src="/Icons/backIcon.svg" alt="" srcSet="" />
           <p>Back to Users</p>
         </div>

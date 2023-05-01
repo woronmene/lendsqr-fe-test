@@ -164,7 +164,22 @@ const educationAndEmploymentFields = [
   "LOAN REPAYMENT",
 ];
 
-const socialsFields = ["TWITTER", "FACEBOOK", "INSTAGRAM"];
+// const socialsFieldss = ["TWITTER", "FACEBOOK", "INSTAGRAM"];
+
+const socialsFields = [
+  {
+    field: "TWITTER",
+    key: "socials",
+  },
+  {
+    field: "FACEBOOK",
+    key: "socials",
+  },
+  {
+    field: "INSTAGRAM",
+    key: "socials",
+  },
+];
 
 const guarantorFields = [
   "FULL NAME",
