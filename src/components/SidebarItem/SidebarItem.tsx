@@ -12,14 +12,20 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ text, image, icon }) => {
   const navigate = useNavigate();
   const { page } = useParams();
 
+  const handleNavigation = () => {
+    if (text === "Logout") {
+      navigate("/login");
+    } else if (text === "Switch Organization") {
+      return;
+    } else {
+      navigate(`/${text}`);
+    }
+  };
+
   return (
     <div
       className={`${styles.sidebarItem} ${page === text && styles.selected}`}
-      onClick={() => {
-        console.log(page, text);
-
-        navigate(`/${text}`);
-      }}
+      onClick={handleNavigation}
     >
       {/* <div className={styles.sidebarItemIcon}> */}
       <img src={image} alt="" />

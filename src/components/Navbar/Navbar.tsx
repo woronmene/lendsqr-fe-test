@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.scss";
 import InputComponent from "../Input/InputComponent";
+import Menu from "../Menu/Menu";
 
 type NavbarProps = {
   toggle: () => void;
@@ -10,6 +11,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
   const [showSearch, setShowSearch] = useState<boolean>(true);
   const [showNavbarItems, setShowNavbarItems] = useState<boolean>(true);
   const [searchValue, setSearchValue] = useState<string>("");
+  const [showMenu, setShowMenu] = useState(false);
 
   // const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -98,12 +100,17 @@ const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
               <div className={styles.notificationContainer}>
                 <img src="/bell3.svg" alt="" srcSet="" />
               </div>
-              <div className={styles.userProfile}>
+              <div
+                className={styles.userProfile}
+                onClick={() => setShowMenu(true)}
+              >
                 <div className={styles.avatar}></div>
                 <div className={styles.name}>
                   <p>Adedeji</p>
                   <img src="/chevrondown.svg" alt="" srcSet="" />
                 </div>
+
+                {showMenu && <Menu type="profile" setShowMenu={setShowMenu} />}
               </div>
             </>
           )}

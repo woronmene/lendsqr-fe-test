@@ -1,12 +1,6 @@
 import React from "react";
 import styles from "./TabContent.module.scss";
-import {
-  // personalInformationFields,
-  // educationAndEmploymentFields,
-  // socialsFields,
-  tabs,
-} from "../../utils/constants";
-// import InfoSection from "../InfoSection/InfoSection";
+import { tabs } from "../../utils/constants";
 import { User } from "../../utils/users";
 
 type TabContentProps = {
@@ -18,23 +12,9 @@ const TabContent: React.FC<TabContentProps> = ({ activeTabIndex, user }) => {
   if (activeTabIndex === 0) {
     return (
       <div className={styles.tabContent}>
-        {/* <InfoSection
-          heading="Personal Information"
-          user={user}
-          fields={personalInformationFields}
-        />
-        <hr className={styles.horizontalRule} />
-        <InfoSection
-          heading="Education and Employment"
-          user={user}
-          fields={educationAndEmploymentFields}
-        /> */}
-
         <div className={styles.infoSection}>
           <p className={styles.header}>Personal Information</p>
           <div className={styles.details}>
-            {/* <DetailItem  /> */}
-
             <div className={styles.detailItem}>
               <p className={styles.field}>FULL NAME</p>
               <p
@@ -76,8 +56,6 @@ const TabContent: React.FC<TabContentProps> = ({ activeTabIndex, user }) => {
         <div className={styles.infoSection}>
           <p className={styles.header}>Education and Employment</p>
           <div className={styles.details}>
-            {/* <DetailItem  /> */}
-
             <div className={styles.detailItem}>
               <p className={styles.field}>LEVEL OF EDUCATION</p>
               <p className={styles.value}>{user?.education.level}</p>
@@ -164,7 +142,7 @@ const TabContent: React.FC<TabContentProps> = ({ activeTabIndex, user }) => {
     );
   } else {
     return (
-      <div>
+      <div className={styles.unavailable}>
         We'll notify you as soon as {tabs[activeTabIndex].text} is available{" "}
       </div>
     );

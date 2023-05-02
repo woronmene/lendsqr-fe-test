@@ -153,6 +153,8 @@
       .userProfile {
         display: flex;
         gap: 4px;
+        position: relative;
+        cursor: pointer;
       }
 
       .avatar {

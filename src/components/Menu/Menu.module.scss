@@ -1,3 +1,5 @@
+@import "../../styles/global";
+
 .menu {
   width: 200px;
   //   height: 130px;
@@ -5,9 +7,6 @@
   aspect-ratio: 180/130;
   background-color: #fff;
   position: absolute;
-  bottom: -10px;
-  right: -60px;
-  z-index: 10;
 
   border: 1px solid rgba(84, 95, 125, 0.04);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
@@ -19,12 +18,53 @@
   justify-content: center;
   gap: 20px;
 
+  &.row {
+    bottom: -10px;
+    right: -60px;
+  }
+
+  &.profile {
+    bottom: -90px;
+    right: -10px;
+    aspect-ratio: 180/70;
+    align-items: flex-start;
+
+    padding: 15px;
+
+    // border: 1px solid red;
+    gap: 10px;
+    z-index: -1;
+
+    @include mdMaxBreakPoint {
+      display: block;
+      bottom: -120px;
+      right: -10px;
+      // width: auto;
+    }
+  }
+
   .moreItem {
     width: 100%;
     gap: 8px;
     display: flex;
     justify-content: flex-start;
     cursor: pointer;
-    // border: 1px solid red;
+  }
+
+  .docs {
+    color: #213f7d;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    margin-right: 47px;
+    display: none;
+
+    @include lgMaxBreakPoint {
+      margin-right: 0;
+    }
+
+    @include mdMaxBreakPoint {
+      display: block;
+      padding: 10px 0;
+    }
   }
 }

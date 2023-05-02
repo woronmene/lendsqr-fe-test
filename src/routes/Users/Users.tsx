@@ -24,29 +24,9 @@ const Users: React.FC = () => {
   const { page } = useParams();
   const { sliceUsersList } = useContext(UsersContext);
 
-  // useEffect(() => {
-  //   async function fetchUsers() {
-  //     const users = await getAllUsers();
-  //     //   console.log(JSON.stringify(users[0]));
-  //     console.log(users);
-
-  //     setUsers(users);
-  //   }
-
-  //   fetchUsers();
-  // }, []);
-
   if (page === "Users") {
     return (
       <div className={styles.users}>
-        {/* {users.map((user) => (
-          <p
-            style={{ cursor: "pointer" }}
-            onClick={() => navigate(`/users/${user.id}`)}
-          >
-            {user.profile.firstName}
-          </p>
-        ))} */}
         <div className={styles.container}>
           <div className={styles.reviewCards}>
             {overviewData.map((card) => (
@@ -81,7 +61,7 @@ const Users: React.FC = () => {
 
           <div
             style={{
-              padding: "20px",
+              padding: "20px 0",
               paddingBottom: "100px",
               // border: "1px solid red",
             }}
@@ -92,7 +72,11 @@ const Users: React.FC = () => {
       </div>
     );
   } else {
-    return <div style={{ margin: "0 auto" }}>{page}</div>;
+    return (
+      <div style={{ margin: "0 auto" }}>
+        We'll notify you as sooon as {page} is available
+      </div>
+    );
   }
 };
 export default Users;

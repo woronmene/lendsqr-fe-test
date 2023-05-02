@@ -5,8 +5,9 @@ interface ButtonProps {
   variant: "outline" | "solid";
   size: string;
   color?: string;
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
+  type?: "button" | "submit" | "reset" | undefined;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -15,6 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   children,
   size,
+  type,
 }) => {
   const buttonStyles =
     variant === "outline" ? styles.outlineButton : styles.solidButton;
@@ -33,6 +35,7 @@ const Button: React.FC<ButtonProps> = ({
       className={`${buttonStyles} ${styles.button} ${sizeClass}`}
       style={{ color, borderColor: color }}
       onClick={onClick}
+      type={type && type}
     >
       <span className={styles.text}>{children}</span>
     </button>

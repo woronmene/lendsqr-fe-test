@@ -5,6 +5,8 @@ interface InputComponentProps {
   type: string;
   placeholder: string;
   onBlur?: FocusEventHandler<HTMLInputElement>;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
   // searchInputRef?: React.RefObject<HTMLInputElement>;
 }
 
@@ -12,6 +14,8 @@ const InputComponent: React.FC<InputComponentProps> = ({
   type,
   placeholder,
   onBlur,
+  onChange,
+
   // searchInputRef,
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -61,7 +65,12 @@ const InputComponent: React.FC<InputComponentProps> = ({
       case "email":
         return (
           <div className={styles.inputComponent}>
-            <input type="email" placeholder={placeholder} />
+            <input
+              type="email"
+              placeholder={placeholder}
+              onChange={onChange}
+              required
+            />
           </div>
         );
       case "password":
@@ -70,6 +79,8 @@ const InputComponent: React.FC<InputComponentProps> = ({
             <input
               type={isPasswordVisible ? "text" : "password"}
               placeholder={placeholder}
+              onChange={onChange}
+              required
             />
             <p
               className={styles.showPassword}

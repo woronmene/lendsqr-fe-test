@@ -5,10 +5,11 @@ import { User } from "../../utils/users";
 
 type MenuProps = {
   setShowMenu: (arg0: boolean) => void;
-  user: User;
+  user?: User;
+  type: string;
 };
 
-const Menu: React.FC<MenuProps> = ({ setShowMenu, user }) => {
+const Menu: React.FC<MenuProps> = ({ setShowMenu, user, type }) => {
   const menuRef = useRef<HTMLDivElement>(null);
 
   const navigate = useNavigate();
@@ -35,22 +36,41 @@ const Menu: React.FC<MenuProps> = ({ setShowMenu, user }) => {
   }
 
   return (
-    <div className={styles.menu} ref={menuRef}>
-      <div
-        className={styles.moreItem}
-        onClick={() => navigate(`/Users/${user.id}`)}
-      >
-        <img src="/Icons/viewIcon.svg" alt="" />
-        <p>View Details</p>
-      </div>
-      <div className={styles.moreItem}>
-        <img src="/Icons/blacklistIcon.svg" alt="" />
-        <p>Blacklist User</p>
-      </div>
-      <div className={styles.moreItem}>
-        <img src="/Icons/activateIcon.svg" alt="" />
-        <p>Activate User</p>
-      </div>
+    <div
+      className={`${styles.menu} ${
+        type === "row" ? styles.row : styles.profile
+      }`}
+      ref={menuRef}
+    >
+      {type === "row" ? (
+        <>
+          <div
+            className={styles.moreItem}
+            onClick={() => navigate(`/Users/${user?.id}`)}
+          >
+            <img src="/Icons/viewIcon.svg" alt="" />
+            <p>View Details</p>
+          </div>
+          <div className={styles.moreItem}>
+            <img src="/Icons/blacklistIcon.svg" alt="" />
+            <p>Blacklist User</p>
+          </div>
+          <div className={styles.moreItem}>
+            <img src="/Icons/activateIcon.svg" alt="" />
+            <p>Activate User</p>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={styles.moreItem} onClick={() => navigate("/login")}>
+            <img src="/Icons/logoutIcon.svg" alt="" />
+            <p>logout</p>
+          </div>
+          <a href="" className={styles.docs}>
+            Docs
+          </a>
+        </>
+      )}
     </div>
   );
 };
