@@ -1,10 +1,5 @@
-// import paginatedRowArrow from "../../images/pagination-down-button.png";
 import styles from "./Pagination.module.scss";
 
-// import arrowRight from "../../images/arrow-right.png";
-// import arrowEnabled from "../../images/arrow-enabled.png";
-// import arrowInactive from "../../images/arrow-inactive.png";
-// import arrowActive from "../../images/arrow-active.png";
 import { useContext } from "react";
 import UsersContext from "../../context/UsersContext";
 
@@ -12,7 +7,6 @@ const Pagination = () => {
   const {
     users,
     text,
-    // handleTextClick,
     setText,
     handleClick,
     goPreviousPage,
@@ -20,8 +14,6 @@ const Pagination = () => {
     buttonTextContent,
     pages,
   } = useContext(UsersContext);
-
-  console.log(text);
 
   type ButtonType = JSX.Element | undefined;
 
@@ -103,70 +95,8 @@ const Pagination = () => {
     return Button;
   };
 
-  // const onClick = () => {
-  //   setIsTrue((prev) => {
-  //     return !prev;
-  //   });
-  // };
-
-  // const handleClose = () => {
-  //   if (!isTrue) {
-  //     setIsTrue(true);
-  //   }
-  // };
-
-  // const divsContent = [5, 10, 20, 25, 50, 100];
-
-  // const divs = divsContent.map((item: any) => {
-  //   return (
-  //     <div
-  //       onClick={handleClose}
-  //       className={item === +text ? styles.div : undefined}
-  //       key={item}
-  //     >
-  //       {item}
-  //     </div>
-  //   );
-  // });
-
   return (
     <div className={styles.paginationButtons}>
-      {/* <div>
-        <span>Showing</span>{" "}
-        <button type="button" onClick={onClick}>
-          {text.replace("Rows", users.length)}
-          <img
-            style={{ transform: !isTrue ? "rotate(180deg)" : "rotate(0)" }}
-            src="/Icons/chevronRightIcon.svg"
-            alt="arrow down button"
-          />
-        </button>{" "}
-        <span>out of 100</span>
-        {!isTrue && (
-          <div
-            onClick={handleTextClick}
-            style={{
-              position: "absolute",
-              width: "100%",
-              background: "#fff",
-              borderRadius: 4,
-              zIndex: 1,
-            }}
-          >
-            <div className={styles.rowDropdown}>
-              <div
-                onClick={handleClose}
-                className={styles.rows}
-                title="Reset to default rows"
-              >
-                Rows
-              </div>
-              {divs}
-            </div>
-          </div>
-        )}
-      </div> */}
-
       <div className={styles.selectPages}>
         <p>Showing</p>
 
@@ -201,9 +131,6 @@ const Pagination = () => {
           }`}
         >
           <img
-            // style={{
-            //   transform: buttonTextContent === 1 ? "rotate(180deg)" : "initial",
-            // }}
             src="/Icons/chevronLeftIcon.svg"
             alt="arrow pointing to the right"
           />
@@ -216,19 +143,7 @@ const Pagination = () => {
           }`}
         >
           <img
-            // style={{
-            //   transform:
-            //     buttonTextContent === list[list.length - 1]
-            //       ? "rotate(180deg)"
-            //       : "initial",
-            // }}
-
             src="/Icons/chevronRightIcon.svg"
-            // src={
-            //   list[list.length - 1] === buttonTextContent
-            //     ? "/Icons/chevronRightIcon.svg"
-            //     : "/Icons/chevronRightIcon.svg"
-            // }
             alt="arrow pointing to the right"
           />
         </span>

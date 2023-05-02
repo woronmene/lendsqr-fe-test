@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import styles from "./NavigationLayout.module.scss";
 import Sidebar from "../components/Sidebar/Sidebar";
-// import { Outlet } from "react-router-dom";
-
-// import { getAllUsers, getUserById, User } from "../../utils/users";
 
 type NavigationLayoutProps = {
   children: JSX.Element;

@@ -1,7 +1,6 @@
 @import "../../styles/global";
 
 .users {
-  // border: 1px solid red;
   width: 100vw;
   height: 100vh;
   padding-left: 283px;
@@ -13,13 +12,11 @@
   }
 
   .container {
-    // border: 1px solid green;
     padding: 60px 4.5%;
 
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    // margin-bottom: 100px;
     max-width: 1700px;
 
     .reviewCards {
@@ -34,17 +31,12 @@
 
       @include xxlMaxBreakPoint {
         grid-template-columns: repeat(3, 1fr);
-        // border: 1px solid red;
       }
       @include mdMaxBreakPoint {
         grid-template-columns: repeat(2, 1fr);
         justify-content: flex-start;
       }
       @include smMaxBreakPoint {
-        // grid-template-columns: repeat(1, 1fr);
-        // display: flex;
-        // flex-wrap: wrap;
-        // border: 1px solid red;
         justify-content: center;
       }
     }
@@ -55,11 +47,8 @@
       height: auto;
       overflow: scroll;
       width: 100%;
-      // margin-bottom: 100px;
 
       @include mdMaxBreakPoint {
-        // border: 3px solid red;
-        // width: 700px;
         overflow: scroll;
       }
     }
@@ -74,16 +63,14 @@
       table {
         padding: 30px;
         padding-bottom: 0;
-        // width: 992px;
+
         width: 100%;
 
         margin-inline: auto;
-        // border: 1px solid black;
+
         background: #ffffff;
 
         @include xlMaxBreakPoint {
-          // border: 3px solid red;
-          // min-width: 700px;
           width: 992px;
           overflow: scroll;
         }
@@ -92,7 +79,6 @@
           text-align: left;
 
           padding: 23px 0;
-          // font-weight: 600;
           font-family: "Work Sans", sans-serif;
 
           width: 17%;
@@ -104,7 +90,6 @@
           /* identical to box height */
 
           color: #545f7d;
-          // border: 1px solid red;
         }
       }
     }

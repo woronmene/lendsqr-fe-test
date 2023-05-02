@@ -40,9 +40,7 @@ const UserDetail: React.FC = () => {
 
     async function fetchUser() {
       const user = await getUserById(userId as string);
-      console.log(user);
       setUser(user);
-      console.log(user);
     }
     // Check if users are already in local storage
 
@@ -72,20 +70,10 @@ const UserDetail: React.FC = () => {
             <p>User Details</p>
 
             <div className={styles.buttonGroup}>
-              <Button
-                variant="outline"
-                color="#E4033B"
-                size="small"
-                onClick={() => console.log("Button clicked")}
-              >
+              <Button variant="outline" color="#E4033B" size="small">
                 BLACKLIST USER
               </Button>
-              <Button
-                variant="outline"
-                color="#39CDCC"
-                size="small"
-                onClick={() => console.log("Button clicked")}
-              >
+              <Button variant="outline" color="#39CDCC" size="small">
                 ACTIVATE USER
               </Button>
             </div>

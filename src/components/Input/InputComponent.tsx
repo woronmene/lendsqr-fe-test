@@ -6,8 +6,6 @@ interface InputComponentProps {
   placeholder: string;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-
-  // searchInputRef?: React.RefObject<HTMLInputElement>;
 }
 
 const InputComponent: React.FC<InputComponentProps> = ({
@@ -15,8 +13,6 @@ const InputComponent: React.FC<InputComponentProps> = ({
   placeholder,
   onBlur,
   onChange,
-
-  // searchInputRef,
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 

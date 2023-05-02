@@ -4,8 +4,6 @@ import FilterCard from "../FilterCard/FilterCard";
 
 type TableHeaderProps = {
   header: string;
-  //   setShowFilterCard: (showFilterCard: boolean) => void;
-  //   showFilterCard: boolean;
 };
 
 const TableHeader: React.FC<TableHeaderProps> = ({ header }) => {

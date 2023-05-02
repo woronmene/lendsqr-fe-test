@@ -3,17 +3,11 @@
 .userCard {
   width: 100%;
 
-  //   border: 1px solid red;
-
   .container {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 30px;
-
-    // @include mdMaxBreakPoint {
-    //   border: 1px solid red;
-    // }
 
     .topCard {
       width: 100%;
@@ -31,17 +25,14 @@
         margin-bottom: 51px;
 
         @include smMaxBreakPoint {
-          // border: 1px solid red;
           margin-left: 15px;
           flex-wrap: wrap;
           flex-direction: column;
           align-items: flex-start;
           gap: 20px;
-          // width: 600px;
         }
 
         .avatarSection {
-          // border: 1px solid black;
           display: flex;
           align-items: center;
         }
@@ -55,29 +46,9 @@
           justify-content: center;
           align-items: center;
           margin-right: 20px;
-          // border: 1px solid red;
-
-          // @include mdMaxBreakPoint {
-          //   // width: 65px;
-          //   margin-right: 5px;
-          //   min-width: 40px;
-          // }
-
-          // img {
-          //   @include mdMaxBreakPoint {
-          //     // width: 22px;
-          //   }
-          // }
         }
         .name {
           padding-right: 30px;
-
-          // @include mdMaxBreakPoint {
-          //   padding-right: 20px;
-          // }
-          // @include smMaxBreakPoint {
-          //   padding-right: 10px;
-          // }
 
           .fullName {
             font-weight: 500;
@@ -118,7 +89,6 @@
           transform: rotate(90deg);
           opacity: 0.2;
           background-color: #545f7d;
-          // border: 1px solid red;
           min-width: 50px;
 
           @include smMaxBreakPoint {
@@ -205,7 +175,6 @@
 
       .tabNav {
         width: 100%;
-        // border: 1px solid red;
         padding: 0 36px;
         display: flex;
         align-items: center;
@@ -240,7 +209,6 @@
           }
 
           &.active {
-            // border: 3px solid black;
             border-bottom: 2px solid #39cdcc;
             /* identical to box height */
 

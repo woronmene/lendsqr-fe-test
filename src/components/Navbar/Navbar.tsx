@@ -32,28 +32,12 @@ const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
     return () => window.removeEventListener("resize", handleWindowResize);
   }, [setShowSearch]);
 
-  //  const handleWindowResize = () => {
-  //    if (window.innerWidth < screenWidthThreshold) {
-  //      setShowSearch(false);
-  //      setShowNavbarItems(true);
-  //    } else {
-  //      setShowSearch(true);
-  //      setShowNavbarItems(true);
-  //    }
-  //  };
-
   const handleSearchIconClick = () => {
     setShowSearch(true);
     setShowNavbarItems(false);
-
-    // if (searchInputRef.current) {
-    //   searchInputRef.current.focus();
-    // }
   };
 
   const handleSearchBlur = () => {
-    console.log("blurred");
-
     if (window.innerWidth < screenWidthThreshold) {
       setShowSearch(false);
       setShowNavbarItems(true);
@@ -77,7 +61,6 @@ const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
               type="search"
               placeholder="Search for anything"
               onBlur={handleSearchBlur}
-              // searchInputRef={searchInputRef}
             />
           </div>
         )}

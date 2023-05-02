@@ -6,14 +6,10 @@
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
   font-family: "Work Sans";
-  //   width: 240px;
   width: 100%;
-  //   height: 160px;
   aspect-ratio: 240/160;
 
   @include smMaxBreakPoint {
-    // width: 300px;
-    // height: 121.33px;
     margin: 0 auto;
   }
 
@@ -25,7 +21,7 @@
     flex-direction: column;
     height: 100%;
     gap: 14px;
-    // border: 1px solid red;
+
     justify-content: center;
 
     @include smMaxBreakPoint {
@@ -33,7 +29,6 @@
     }
 
     img {
-      //   margin-bottom: 14px;
       width: 40px;
 
       @include smMaxBreakPoint {
@@ -49,7 +44,6 @@
       text-transform: uppercase;
 
       color: #545f7d;
-      //   margin-bottom: 12px;
 
       @include smMaxBreakPoint {
         font-size: 12px;

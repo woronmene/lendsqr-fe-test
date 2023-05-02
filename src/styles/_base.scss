@@ -5,11 +5,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  //border: 1px red solid;
 }
-// html {
-//   scroll-behavior: smooth;
-// }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -20,14 +19,7 @@ body {
   box-sizing: border-box;
   height: 100vh;
   min-height: 100%;
-  // color: white;
-  // background-color: #000;
 }
-
-// a {
-//   color: #8e8e93;
-//   text-decoration: none;
-// }
 
 ul {
   list-style: none;

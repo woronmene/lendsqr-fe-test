@@ -11,19 +11,8 @@
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
   display: flex;
 
-  @include xlMaxBreakPoint {
-    // border: 1px solid red;
-  }
-  @include lgMaxBreakPoint {
-    // border: 1px solid black;
-  }
-  @include mdMaxBreakPoint {
-    // border: 3px solid green;
-  }
-
   .logoSection {
     width: 283px;
-    // border: 1px solid red;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -40,7 +29,6 @@
     }
 
     .logoContainer {
-      // border: 1px solid red;
       width: 60%;
 
       @include lgMaxBreakPoint {
@@ -58,8 +46,7 @@
 
   .rightSection {
     flex: 1;
-    // border: 1px solid green;
-    // width: 92%;
+
     padding: 0 4%;
     display: flex;
     justify-content: space-between;
@@ -76,9 +63,7 @@
     }
 
     .searchContainer {
-      // width: 34%;]
       width: 400px;
-      // border: 1px solid red;
 
       @include lgMaxBreakPoint {
         width: 300px;
@@ -86,32 +71,22 @@
       }
       @include smMaxBreakPoint {
         width: 200px;
-        // margin-right: 20px;
       }
     }
 
     .options {
       display: flex;
       align-items: center;
-      // border: 1px solid red;
 
       @include lgMaxBreakPoint {
         gap: 24px;
       }
-      // @include mdMaxBreakPoint {
-      //   gap: 10px;
-      // }
 
       .searchIconContainer {
-        // border: 1px solid red;
-        // margin-right: 24px;
-
         img {
-          // width: 100%;
           margin-bottom: -5px;
         }
         @include mdMaxBreakPoint {
-          // width: 20px;
         }
       }
 
@@ -132,19 +107,15 @@
 
       .notificationContainer {
         margin-right: 30px;
-        // border: 1px solid red;
 
         @include lgMaxBreakPoint {
           margin-right: 0;
         }
         @include mdMaxBreakPoint {
-          // width: 20px;
           margin-right: 0;
-          // border: 1px solid red;
         }
 
         img {
-          // width: 100%;
           margin-bottom: -5px;
           padding-bottom: -5px;
         }
@@ -172,13 +143,11 @@
         }
         @include mdMaxBreakPoint {
           width: 30px;
-          // margin-right: -10px;
         }
       }
 
       .name {
         display: flex;
-        // border: 1px solid red;
         align-items: center;
 
         p {

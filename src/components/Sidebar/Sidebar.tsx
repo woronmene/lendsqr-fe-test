@@ -9,7 +9,6 @@ type SidebarProps = {
 };
 
 const Sidebar: React.FC<SidebarProps> = ({ showNav, setShowNav }) => {
-  //   const [showNav, setShowNav] = useState<boolean>(true);
   const screenWidthThreshold = 1024;
 
   useEffect(() => {
@@ -28,10 +27,6 @@ const Sidebar: React.FC<SidebarProps> = ({ showNav, setShowNav }) => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, [setShowNav]);
-
-  //   const toggleNav = () => {
-  //     setShowNav(!showNav);
-  //   };
 
   return (
     <div

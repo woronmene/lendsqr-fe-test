@@ -13,10 +13,6 @@ const UsersProvider = ({ children }: any) => {
 
   useEffect(() => {
     const fetchUsersAPI = async () => {
-      // const response = await fetch(
-      //   "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/"
-      // );
-
       const data = await getAllUsers();
 
       setUsers(data);
@@ -27,10 +23,6 @@ const UsersProvider = ({ children }: any) => {
 
     fetchUsersAPI();
   }, []);
-
-  // const handleTextClick = (e: any) => {
-  //   setText(e.target.textContent.replace("Rows", `${users?.length}`));
-  // };
 
   const handleClick = (event: any) => {
     const text = event.currentTarget.textContent;
@@ -66,8 +58,6 @@ const UsersProvider = ({ children }: any) => {
   }
 
   const pages = Math.ceil(users?.length / sliceUsersList.length) + 1;
-
-  console.log(pages);
 
   if (isLoading) {
     return (

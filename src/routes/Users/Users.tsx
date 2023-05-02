@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import styles from "./Users.module.scss";
-// import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 import { User } from "../../utils/users";
@@ -14,14 +13,7 @@ import UsersContext from "../../context/UsersContext";
 import { overviewData } from "../../utils/constants";
 import NavigationLayout from "../../Layout/NavigationLayout";
 
-// type UsersProps = {
-//   test: string;
-// };
-
 const Users: React.FC = () => {
-  // const [users, setUsers] = useState<User[]>([]);
-
-  // const navigate = useNavigate();
   const { page } = useParams();
   const { sliceUsersList } = useContext(UsersContext);
 

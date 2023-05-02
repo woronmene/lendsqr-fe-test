@@ -12,14 +12,6 @@
   transition: all 0.3s ease;
   font-family: "Work sans", sans-serif;
 
-  // .sidebarItemIcon {
-  //   border: 1px solid red;
-  //   width: 20px;
-
-  //   // height: 12px;
-
-  // }
-
   &.selected {
     background-color: rgba(57, 204, 205, 0.06);
     border-left: 3px solid #39cdcc;
@@ -28,8 +20,6 @@
 
   img {
     width: 16px;
-    //
-    // border: 1px solid red;
   }
 
   p {

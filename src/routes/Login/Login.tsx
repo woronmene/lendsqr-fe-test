@@ -65,21 +65,8 @@ const Login: React.FC = () => {
             />
           </div>
           <p className={styles.forgotPassword}>FORGOT PASSWORD?</p>
-          {/* <InputComponent type="search" placeholder="Search" /> */}
-          {/* <Button
-            variant="outline"
-            color="#f00"
-            onClick={() => console.log("Button clicked")}
-          >
-            Outline Button
-          </Button> */}
-          <Button
-            variant="solid"
-            size="large"
-            color="#fff"
-            type="submit"
-            // onClick={() => console.log("yes")}
-          >
+
+          <Button variant="solid" size="large" color="#fff" type="submit">
             {isLoading ? "LOGGING IN..." : "LOG IN"}
           </Button>
         </div>
