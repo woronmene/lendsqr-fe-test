@@ -63,7 +63,7 @@ https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr
 ```
 Paste it on your browser search bar or any API platform like [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), etc. to get the full data.
 
-2.)The Project is fully responsive with an amazing experience
+2.) Full responsiveness with an amazing mobile experience.
 
 
 
