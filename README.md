@@ -44,7 +44,7 @@ Technology used are:
 
 ## Project Description
 
-1.) The project dashboard or users page shows users detail on a table. Must relevant data displayed in the users page are:
+1.) The project dashboard or users page shows users detail on a table. Most relevant data displayed in the users page are:
 
 - Organization
 - Phone Number
@@ -58,13 +58,13 @@ The API for the users is shown below:
 ```txt
 https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/
 ```
+Paste it on your browser search bar or any API platform like [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), etc. to get the full data.
 
 2.)The Project is fully responsive with an amazing experience
 
 
-Paste it on your browser search bar or any API platform like [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), etc. to get the full data.
 
-2.) The project has a couple of components listed below:
+3.) The project has a couple of components listed below:
 
 
 - Button
@@ -79,7 +79,7 @@ Paste it on your browser search bar or any API platform like [Postman](https://w
 - User Detail
 - Pagination
 
-3.) The user detail page contails all detail of a specific user based on the id. It also has detailed information of the guarantor like the name, phone number, email, and relationship with the user. You can get the API as shown below:
+4.) The user detail page contails all detail of a specific user based on the id. It also has detailed information of the guarantor like the name, phone number, email, and relationship with the user. You can get the API as shown below:
 
  ```txt
 https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/:id
@@ -87,6 +87,24 @@ https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr
 
 Paste it on your browser search or any API platform like Postman, Insomnia, etc. to get the full data.
 Based on the current id, it is between `1 to 100`. That is replace `:id` to any number between 1 to 100.
+
+
+## Usage
+
+- Open the application in your browser. The first screen you will see is the login page.
+- Enter your login credentials and click the "Login" button to log in.
+- Once you are logged in, you will be taken to the user page. Here, you will see a list of all users in a paginated format.
+- To see more details about a specific user, click on the "more" icon next to the user's name.
+- In the dropdown menu, click on "View User Details" to see more information about the user.
+- The project is fully responsive, so you can use it on any device, from desktops to smartphones. Enjoy!
+
+
+## Issues
+
+Due to a conflict with the new version of react-router-dom, we were not able to write tests for the project. Specifically, the useNavigate hook in react-router-dom always throws an error during testing, even though it works fine in the project itself. We are currently investigating this issue, and any assistance in resolving it would be greatly appreciated.
+
+
+
 
 ## Design
 
