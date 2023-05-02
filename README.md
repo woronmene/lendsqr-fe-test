@@ -44,7 +44,7 @@ Technology used are:
 
 ## Project Description
 
- The project is a mirror image of the Figma design, Feel free to compare side by side, and see for yourself the level of attention to detail that we have put into this project. The features are:
+ The project is a mirror image of the Figma design, Feel free to compare side by side, and see for yourself the level of attention to detail that has been put into this project. The features are:
 
 
 1.) The project dashboard or users page shows users detail on a table. Most relevant data displayed in the users page are:
