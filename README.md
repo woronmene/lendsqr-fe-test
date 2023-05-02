@@ -7,7 +7,7 @@
 
 ### ✨ [Demo](https://mene-oritsemiworon-lendsqr-fe-test.netlify.app/)
 
-# Lead Sqr Front end Project
+# LendSqr Front end Project
 
 ## Installation
 
