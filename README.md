@@ -44,6 +44,9 @@ Technology used are:
 
 ## Project Description
 
+ The project is a mirror image of the Figma design, Feel free to compare side by side, and see for yourself the level of attention to detail that we have put into this project. The features are:
+
+
 1.) The project dashboard or users page shows users detail on a table. Most relevant data displayed in the users page are:
 
 - Organization
@@ -95,13 +98,14 @@ Based on the current id, it is between `1 to 100`. That is replace `:id` to any 
 - Enter your login credentials and click the "Login" button to log in.
 - Once you are logged in, you will be taken to the user page. Here, you will see a list of all users in a paginated format.
 - To see more details about a specific user, click on the "more" icon next to the user's name.
+- Note how quickly the user details show up, the loading state is almost unnoticeable.
 - In the dropdown menu, click on "View User Details" to see more information about the user.
 - The project is fully responsive, so you can use it on any device, from desktops to smartphones. Enjoy!
 
 
 ## Issues
 
-Due to a conflict with the new version of react-router-dom, we were not able to write tests for the project. Specifically, the useNavigate hook in react-router-dom always throws an error during testing, even though it works fine in the project itself. We are currently investigating this issue, and any assistance in resolving it would be greatly appreciated.
+Due to a conflict with the new version of react-router-dom, I was not able to write tests for the project. Specifically, the useNavigate hook in react-router-dom always throws an error during testing, even though it works fine in the project itself. I am currently investigating this issue, and any assistance in resolving it would be greatly appreciated.
 
 
 
