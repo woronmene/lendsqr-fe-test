@@ -116,7 +116,7 @@
       }
 
       .docs {
-        color: #213f7d;
+        color: $primary-color;
         font-weight: 400;
         font-family: "Roboto", sans-serif;
         margin-right: 47px;
@@ -161,7 +161,7 @@
         width: 48px;
         aspect-ratio: 1;
         border-radius: 50%;
-        background-image: url("../../../public/avatar.png");
+        background-image: url("/avatar.png");
         background-position: center;
         background-size: cover;
         margin-right: 10px;
@@ -184,7 +184,7 @@
         p {
           font-family: "Work Sans", sans-serif;
           font-weight: 500;
-          color: #213f7d;
+          color: $primary-color;
           margin-right: 10px;
 
           @include lgMaxBreakPoint {

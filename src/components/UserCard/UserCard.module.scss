@@ -80,13 +80,12 @@
           // }
 
           .fullName {
-            font-family: "Work Sans";
             font-weight: 500;
             font-size: 22px;
             line-height: 26px;
             /* identical to box height */
 
-            color: #213f7d;
+            color: $primary-color;
             margin-bottom: 8px;
 
             @include mdMaxBreakPoint {
@@ -99,7 +98,6 @@
           }
 
           .id {
-            font-family: "Work Sans";
             font-weight: 400;
             font-size: 14px;
             line-height: 16px;
@@ -134,7 +132,6 @@
           justify-content: flex-start;
           gap: 10px;
           p {
-            font-family: "Work Sans";
             font-weight: 500;
             font-size: 14px;
             line-height: 16px;
@@ -172,13 +169,12 @@
           gap: 12px;
 
           .amount {
-            font-family: "Work Sans";
             font-style: normal;
             font-weight: 500;
             font-size: 22px;
             line-height: 26px;
 
-            color: #213f7d;
+            color: $primary-color;
 
             @include mdMaxBreakPoint {
               font-size: 15px;
@@ -189,14 +185,13 @@
           }
 
           .accountDetails {
-            font-family: "Work Sans";
             font-style: normal;
             font-weight: 400;
             font-size: 12px;
             line-height: 14px;
             /* identical to box height */
 
-            color: #213f7d;
+            color: $primary-color;
 
             @include mdMaxBreakPoint {
               font-size: 8px;
@@ -226,7 +221,6 @@
         }
 
         .tabNavItem {
-          font-family: "Work Sans";
           font-style: normal;
           font-weight: 400;
           font-size: 16px;
@@ -244,12 +238,6 @@
           @include lgMaxBreakPoint {
             font-size: 12px;
           }
-          &:hover {
-            border-bottom: 2px solid #39cdcc;
-            /* identical to box height */
-
-            color: #39cdcc;
-          }
 
           &.active {
             // border: 3px solid black;
@@ -257,6 +245,23 @@
             /* identical to box height */
 
             color: #39cdcc;
+            font-family: "Work Sans";
+          }
+          &.inActive {
+            font-family: "SF Compact Text";
+
+            /* identical to box height */
+
+            text-align: center;
+
+            color: rgba(0, 0, 0, 0.8);
+
+            &:hover {
+              border-bottom: 2px solid #39cdcc;
+              /* identical to box height */
+
+              color: #39cdcc;
+            }
           }
         }
       }

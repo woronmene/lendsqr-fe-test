@@ -13,6 +13,9 @@ const Sidebar: React.FC<SidebarProps> = ({ showNav, setShowNav }) => {
   const screenWidthThreshold = 1024;
 
   useEffect(() => {
+    if (window.innerWidth < screenWidthThreshold) {
+      setShowNav(false);
+    }
     const handleResize = () => {
       if (window.innerWidth < screenWidthThreshold) {
         setShowNav(false);
@@ -41,30 +44,54 @@ const Sidebar: React.FC<SidebarProps> = ({ showNav, setShowNav }) => {
           text="Switch Organization"
           image="/Icons/switchOrganizationIcon.svg"
           icon="/Icons/chevronDownIcon.svg"
+          setShowNav={setShowNav}
         />
-        <SidebarItem text="Dashboard" image="/Icons/dashboardIcon.svg" />
+        <SidebarItem
+          setShowNav={setShowNav}
+          text="Dashboard"
+          image="/Icons/dashboardIcon.svg"
+        />
         <div>
           <p className={styles.sidebarHeading}>CUSTOMERS</p>
           {customers.map((item) => (
-            <SidebarItem key={item.text} text={item.text} image={item.image} />
+            <SidebarItem
+              key={item.text}
+              setShowNav={setShowNav}
+              text={item.text}
+              image={item.image}
+            />
           ))}
         </div>
 
         <div>
           <p className={styles.sidebarHeading}>BUSINESSES</p>
           {businesses.map((item) => (
-            <SidebarItem key={item.text} text={item.text} image={item.image} />
+            <SidebarItem
+              key={item.text}
+              setShowNav={setShowNav}
+              text={item.text}
+              image={item.image}
+            />
           ))}
         </div>
 
         <div>
           <p className={styles.sidebarHeading}>SETTINGS</p>
           {settings.map((item) => (
-            <SidebarItem key={item.text} text={item.text} image={item.image} />
+            <SidebarItem
+              key={item.text}
+              setShowNav={setShowNav}
+              text={item.text}
+              image={item.image}
+            />
           ))}
         </div>
         <div className={styles.logout}>
-          <SidebarItem text="Logout" image="/Icons/logoutIcon.svg" />
+          <SidebarItem
+            text="Logout"
+            setShowNav={setShowNav}
+            image="/Icons/logoutIcon.svg"
+          />
         </div>
 
         <p className={styles.versionText}>v1.2.0</p>

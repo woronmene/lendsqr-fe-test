@@ -10,7 +10,6 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
   const [showSearch, setShowSearch] = useState<boolean>(true);
   const [showNavbarItems, setShowNavbarItems] = useState<boolean>(true);
-  const [searchValue, setSearchValue] = useState<string>("");
   const [showMenu, setShowMenu] = useState(false);
 
   // const searchInputRef = useRef<HTMLInputElement>(null);

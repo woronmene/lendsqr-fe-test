@@ -5,7 +5,7 @@ import styles from "./Pagination.module.scss";
 // import arrowEnabled from "../../images/arrow-enabled.png";
 // import arrowInactive from "../../images/arrow-inactive.png";
 // import arrowActive from "../../images/arrow-active.png";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import UsersContext from "../../context/UsersContext";
 
 const Pagination = () => {
@@ -23,7 +23,8 @@ const Pagination = () => {
 
   console.log(text);
 
-  const [isTrue, setIsTrue] = useState(true);
+  type ButtonType = JSX.Element | undefined;
+
   let list: any = Array.from(Array(pages).keys()).splice(1);
   const buttonText = (i: number) => {
     if (i > list.length) {
@@ -31,7 +32,7 @@ const Pagination = () => {
     }
 
     if (list.length > 3) {
-      const dots: any = "...";
+      const dots = "...";
       list.splice(1, i - 3, dots);
       list.splice(5, list.length - 7, dots);
     }
@@ -64,7 +65,7 @@ const Pagination = () => {
       list.splice(4, 0, 5);
     }
 
-    const dots = list.filter((item: any) => {
+    const dots = list.filter((item: string) => {
       return item === "...";
     });
 
@@ -77,13 +78,13 @@ const Pagination = () => {
       list.pop();
     }
 
-    const Button = list.map((item: number | string, index: any) => {
-      let button: any;
+    const Button = list.map((item: number | string) => {
+      let button: ButtonType;
       if (item === i || item === "...") {
         button = (
           <button
             className={item !== "..." ? styles.active : styles.dot}
-            key={index}
+            key={item}
             type="button"
           >
             {item}
@@ -91,7 +92,7 @@ const Pagination = () => {
         );
       } else {
         button = (
-          <button onClick={handleClick} key={index} type="button">
+          <button onClick={handleClick} key={item} type="button">
             {item}
           </button>
         );

@@ -1,3 +1,5 @@
+@import "../../styles/global";
+
 .sidebarItem {
   display: flex;
   align-items: center;
@@ -8,6 +10,7 @@
   cursor: pointer;
   opacity: 0.6;
   transition: all 0.3s ease;
+  font-family: "Work sans", sans-serif;
 
   // .sidebarItemIcon {
   //   border: 1px solid red;
@@ -30,6 +33,6 @@
   }
 
   p {
-    color: #213f7d;
+    color: $primary-color;
   }
 }

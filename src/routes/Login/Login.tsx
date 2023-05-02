@@ -27,8 +27,6 @@ const Login: React.FC = () => {
     if (email.trim() === "" || password.trim() === "") {
       alert("Email and password cannot be empty");
     } else {
-      console.log(email, password);
-
       setIsLoading(true);
 
       setTimeout(() => {
@@ -82,7 +80,7 @@ const Login: React.FC = () => {
             type="submit"
             // onClick={() => console.log("yes")}
           >
-            {isLoading ? "LOGGING IN" : "LOG IN"}
+            {isLoading ? "LOGGING IN..." : "LOG IN"}
           </Button>
         </div>
       </form>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext, useEffect, useState } from "react";
 import { User, getAllUsers } from "../utils/users";
 
@@ -8,7 +9,7 @@ const UsersProvider = ({ children }: any) => {
   const [text, setText] = useState<string>("100");
   const [isLoading, setIsLoading] = useState(true);
 
-  const [buttonTextContent, setButtonTextContext] = useState<any>(1);
+  const [buttonTextContent, setButtonTextContext] = useState(1);
 
   useEffect(() => {
     const fetchUsersAPI = async () => {
@@ -38,7 +39,7 @@ const UsersProvider = ({ children }: any) => {
 
   const goPreviousPage = () => {
     if (buttonTextContent > 1) {
-      setButtonTextContext((prev: any) => {
+      setButtonTextContext((prev) => {
         return prev - 1;
       });
     }
@@ -46,7 +47,7 @@ const UsersProvider = ({ children }: any) => {
 
   const goNextPage = () => {
     if (buttonTextContent < users.length / +text) {
-      setButtonTextContext((prev: any) => {
+      setButtonTextContext((prev) => {
         return prev + 1;
       });
     } else if (buttonTextContent > users.length / +text) {
@@ -54,7 +55,7 @@ const UsersProvider = ({ children }: any) => {
     }
   };
 
-  let sliceUsersList: any;
+  let sliceUsersList: User[];
   if (buttonTextContent === 1 || buttonTextContent > users.length / +text) {
     sliceUsersList = users.slice(0, +text);
   } else {
@@ -69,7 +70,20 @@ const UsersProvider = ({ children }: any) => {
   console.log(pages);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div
+        style={{
+          height: "100vh",
+          width: "100vw",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {" "}
+        Loading...
+      </div>
+    );
   }
 
   return (
@@ -80,7 +94,6 @@ const UsersProvider = ({ children }: any) => {
         buttonTextContent,
         sliceUsersList,
         setText,
-        // handleTextClick,
         handleClick,
         goPreviousPage,
         goNextPage,

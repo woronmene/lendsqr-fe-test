@@ -2,6 +2,7 @@
 
 .tabContent {
   padding: 30px;
+  font-family: "Work Sans";
 
   .horizontalRule {
     // background-color: rgba(33, 63, 125, 0.06);
@@ -14,7 +15,6 @@
     // border: 1px solid red;
 
     .header {
-      font-family: "Work Sans";
       font-style: normal;
       font-weight: 500;
       font-size: 16px;
@@ -22,7 +22,7 @@
       margin-bottom: 30px;
       /* identical to box height */
 
-      color: #213f7d;
+      color: $primary-color;
 
       @include smMaxBreakPoint {
         font-size: 14px;

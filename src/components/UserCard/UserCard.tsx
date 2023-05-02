@@ -21,8 +21,16 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => {
         <div className={styles.topCard}>
           <div className={styles.detailsSection}>
             <div className={styles.avatarSection}>
-              <div className={styles.avatar}>
-                <img src="/Icons/profileIcon.svg" alt="" />
+              <div
+                className={styles.avatar}
+                style={{
+                  backgroundImage: `url(${user?.profile.avatar})`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+              >
+                {/* <img src="/Icons/profileIcon.svg" alt="" /> */}
+                {/* <img src={user?.profile.avatar} alt="" /> */}
               </div>
               <div className={styles.name}>
                 <p
@@ -54,9 +62,9 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => {
           <div className={styles.tabNav}>
             {tabs.map((tab, index) => (
               <div
-                key={index}
+                key={tab.text}
                 className={`${styles.tabNavItem} ${
-                  activeTabIndex === index ? styles.active : ""
+                  activeTabIndex === index ? styles.active : styles.inActive
                 }`}
                 onClick={() => handleTabClick(index)}
               >

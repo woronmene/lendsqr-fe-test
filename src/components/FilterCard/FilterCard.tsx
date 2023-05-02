@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useEffect } from "react";
 import styles from "./FilterCard.module.scss";
 import Button from "../Button/Button";

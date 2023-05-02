@@ -1,0 +1,31 @@
+@import "../../styles/global";
+
+.errorPage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    font-size: 40px;
+    font-weight: 700;
+
+    @include mdMaxBreakPoint {
+      font-size: 20px;
+    }
+  }
+
+  .imageContainer {
+    width: 60%;
+
+    @include smMaxBreakPoint {
+      width: 90%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

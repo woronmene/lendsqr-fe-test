@@ -9,34 +9,33 @@ import Root from "./routes/Root/Root.tsx";
 import UserDetail from "./routes/UserDetail/UserDetail.tsx";
 import Users from "./routes/Users/Users.tsx";
 import { UsersProvider } from "./context/UsersContext.tsx";
+import ErrorPage from "./routes/ErrorPage/ErrorPage.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-
-    children: [
-      // {
-      //   path: "users/",
-      //   element: <Users />,
-      // },
-      {
-        path: "Users/:userId",
-        element: <UserDetail />,
-      },
-      {
-        path: "/:page",
-        element: <Users />,
-      },
-    ],
+    errorElement: <ErrorPage />,
   },
-  // {
-  //   path: "/users",
-  //   element: <p>Users page</p>,
-  // },
+  {
+    path: "/:page",
+    element: <Users />,
+    errorElement: <ErrorPage />,
+  },
   {
     path: "/login",
     element: <Login />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "Users/:userId",
+    element: <UserDetail />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/error",
+    element: <ErrorPage />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
