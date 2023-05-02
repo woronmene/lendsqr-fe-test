@@ -67,7 +67,7 @@ Paste it on your browser search bar or any API platform like [Postman](https://w
 
 
 
-3.) The project has a couple of components listed below:
+3.) Some of the project are components listed below:
 
 
 - Button
@@ -82,13 +82,13 @@ Paste it on your browser search bar or any API platform like [Postman](https://w
 - User Detail
 - Pagination
 
-4.) The user detail page contails all detail of a specific user based on the id. It also has detailed information of the guarantor like the name, phone number, email, and relationship with the user. You can get the API as shown below:
+4.) The user details page contains all details of a specific user based on the id. It also has detailed information of the guarantor like the name, phone number, email, and relationship with the user. You can get the API as shown below:
 
  ```txt
 https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/:id
 ```
 
-Paste it on your browser search or any API platform like Postman, Insomnia, etc. to get the full data.
+Paste it on your browser search or in any API platform like Postman, Insomnia, etc. to get the full data.
 Based on the current id, it is between `1 to 100`. That is replace `:id` to any number between 1 to 100.
 
 
@@ -105,7 +105,7 @@ Based on the current id, it is between `1 to 100`. That is replace `:id` to any 
 
 ## Issues
 
-Due to a conflict with the new version of react-router-dom, I was not able to write tests for the project. Specifically, the useNavigate hook in react-router-dom always throws an error during testing, even though it works fine in the project itself. I am currently investigating this issue, and any assistance in resolving it would be greatly appreciated.
+Due to a conflict with the new version of react-router-dom, I was not able to write tests for the project. Specifically, the useNavigate hook in react-router-dom always throws an error during testing, even though it works fine in the project itself.And this hook is widely used in the project. I am currently investigating this issue, and any assistance in resolving it would be greatly appreciated.
 
 
 
