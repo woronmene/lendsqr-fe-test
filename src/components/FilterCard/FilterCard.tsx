@@ -73,16 +73,10 @@ const FilterCard: React.FC<FilterCardProps> = ({ setShowFilterCard }) => {
             size="smaller"
             variant="outline"
             color="rgba(84, 95, 125, 0.9)"
-            onClick={() => console.log("log")}
           >
             Reset
           </Button>
-          <Button
-            size="smaller"
-            variant="solid"
-            color="#fff"
-            onClick={() => console.log("log")}
-          >
+          <Button size="smaller" variant="solid" color="#fff">
             Filter
           </Button>
         </div>

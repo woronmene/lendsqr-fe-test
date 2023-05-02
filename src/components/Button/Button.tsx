@@ -35,6 +35,7 @@ const Button: React.FC<ButtonProps> = ({
       className={`${buttonStyles} ${styles.button} ${sizeClass}`}
       style={{ color, borderColor: color }}
       onClick={onClick}
+      disabled={size === "smaller"}
       type={type && type}
     >
       <span className={styles.text}>{children}</span>
